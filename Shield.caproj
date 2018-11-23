@@ -891,14 +891,6 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Earth_background" sid="658295099303721">
-                    <plugin id="Sprite" />
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="496043120571702" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\inGame_BG_1.png" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
                 <object-type name="Pillar_R" sid="808893237943538">
                     <plugin id="Sprite" />
                     <behaviors>
@@ -1145,9 +1137,6 @@
             <object-type name="GAMEOVER" sid="436257477139929">
                 <plugin id="Text" />
             </object-type>
-            <object-type name="Shield" sid="692789493593749">
-                <plugin id="Text" />
-            </object-type>
             <object-type name="StartCountDownText" sid="316809840998181">
                 <plugin id="Text" />
             </object-type>
@@ -1155,15 +1144,6 @@
                 <plugin id="Text" />
             </object-type>
             <object-type name="GOText" sid="214751993898615">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="Dash" sid="583791918112655">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="buttonNames" sid="984623139151766">
-                <plugin id="Text" />
-            </object-type>
-            <object-type name="testMap" sid="830227188945171">
                 <plugin id="Text" />
             </object-type>
             <object-type name="P3score" sid="513584402823242">
@@ -1306,27 +1286,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Spring" sid="797397659408434">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="724991992855442">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="535982117757366" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="LastLayout" sid="515071923559649">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="630909801330628" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type global="1" name="GeneralArrayInstance" sid="159346523107644">
             <plugin id="Arr" />
             <instance-variables>
@@ -1460,22 +1419,6 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="915359651502925" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Minecraft.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="MinecraftBlock2" sid="371871089341168">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Solid" sid="303503618469623">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="802913445476536">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678890089599087" speed="5">
-                    <frame duration="1" hotspotX="1" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
