@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_SFX</name>
+    <events>
+        <variable constant="0" name="SlamCountP1" sid="103963741421445" static="0" type="number">0</variable>
+        <variable constant="0" name="SlamCountP2" sid="838998826527036" static="0" type="number">0</variable>
+        <event-group description="" sid="197235211307899" title="P1 SFX">
+            <sub-events>
+                <comment>Floor SFX</comment>
+                <event-block sid="893579357194284">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="135812426092355" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="769567631156531" type="Jump">
+                            <param id="0" name="Audio file">landing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Jump SFX</comment>
+                <event-block sid="845145245823253">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="267011125832305" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="566830304447926" type="Jump">
+                            <param id="0" name="Audio file">JumpV2</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Slam SFX</comment>
+                <event-block sid="356727755899952">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="137485415842956" type="System">
+                            <param id="0" name="Variable">SlamCountP1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="147819148794883">
+                            <conditions>
+                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="753269058469105" type="Player" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="431141081868374">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="585171139109794" type="Keyboard">
+                                            <param id="0" name="Key">83</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="958991565554028" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-5</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="430323864607372" type="System">
+                                            <param id="0" name="Variable">SlamCountP1</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="775685837257378">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="786312921836401" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="576041238878660" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-5</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="111308383658404" type="System">
+                                            <param id="0" name="Variable">SlamCountP1</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="479464603679378">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="836511702120490" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">0</param>
+                                            <param id="1" name="Button">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="501061138632265" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-5</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="106903663614643" type="System">
+                                            <param id="0" name="Variable">SlamCountP1</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Death</comment>
+                <event-block disabled="1" sid="832923772696994">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Play" sid="143318054827710" type="Jump">
+                            <param id="0" name="Audio file">death</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="161979111331141">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="408514723093945" type="Player">
+                            <param id="0" name="Object">p2top</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <comment>Slam Counter reset</comment>
+                <event-block sid="336907640097375">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="631478445735041" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="600724550358363" type="System">
+                            <param id="0" name="Variable">SlamCountP1</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="601207590969630">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="808729329869669" type="System">
+                            <param id="0" name="First value">Player.Platform.MaxSpeed</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">850</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="983265372633019">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="903901092818986" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Play (by name)" sid="974835187514794" type="Jump">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;dash&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">-10</param>
+                                    <param id="2" name="Tag (optional)">&quot;SFX&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="947276090347343" title="P2 SFX">
+            <sub-events>
+                <comment>Floor SFX </comment>
+                <event-block sid="826531948427076">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="869234810935000" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="532264355553588" type="Jump">
+                            <param id="0" name="Audio file">landing</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Jump SFX </comment>
+                <event-block sid="352343944342403">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="685196337140636" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="884385809653435" type="Jump">
+                            <param id="0" name="Audio file">JumpV2</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Slam SFX</comment>
+                <event-block sid="204131229863641">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="560501243058800" type="System">
+                            <param id="0" name="Variable">SlamCountP2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="966167245445738">
+                            <conditions>
+                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="952275215891291" type="Player2" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="374626013183154">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="869692983441988" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">1</param>
+                                            <param id="1" name="Button">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="158492904713565" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="223503855890845" type="System">
+                                            <param id="0" name="Variable">SlamCountP2</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="237745790745415">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="869082298005507" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">1</param>
+                                            <param id="1" name="Button">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="880597638591666" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="287921450403643" type="System">
+                                            <param id="0" name="Variable">SlamCountP2</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="476368547668608">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="908144043560770" type="Keyboard">
+                                            <param id="0" name="Key">40</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="430040457488877" type="Jump">
+                                            <param id="0" name="Audio file">slam</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-5</param>
+                                            <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="926401394799514" type="System">
+                                            <param id="0" name="Variable">SlamCountP2</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Death</comment>
+                <event-block disabled="1" sid="266470471312077">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="544981002662305" type="Player2">
+                            <param id="0" name="Object">p1top</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="881812777340714">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Play" sid="207893191132167" type="Jump">
+                                    <param id="0" name="Audio file">death</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment> Slam Counter reset</comment>
+                <event-block sid="977902232029181">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="824494223651531" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="838129503569464" type="System">
+                            <param id="0" name="Variable">SlamCountP2</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="774824358405011" title="SFX start ">
+            <sub-events>
+                <comment>GO! beep</comment>
+                <event-block sid="145369667898849">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="768841943461676" type="GOText" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="275387867528747" type="System">
+                            <param id="0" name="Variable">StartCountDown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="614782418123912">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="892840854071864" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="412498538624184" type="Jump">
+                                    <param id="0" name="Audio file">go</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Start Beep</comment>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="192893162272081" title="Sound Track">
+            <sub-events>
+                <comment>Intial start Sound Track</comment>
+                <event-block sid="106912725463817">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="501863956151302" type="SoundTrackStart" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="804249310088575" type="Jump">
+                            <param id="0" name="Audio file">Aegis Stem</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;Stem&quot;</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="162125765007396" type="System">
+                            <param id="0" name="Layout">Main Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="975670857479334">
+                    <conditions>
+                        <condition id="0" name="On ended" sid="292773785034951" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="479376446024281" type="Jump">
+                            <param id="0" name="Audio file">Aegis Loop</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;Music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

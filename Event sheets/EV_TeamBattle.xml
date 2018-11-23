@@ -1,0 +1,1570 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_TeamBattle</name>
+    <events>
+        <variable constant="0" name="Team_p1" sid="675054870131553" static="0" type="number">5</variable>
+        <variable constant="0" name="Team_p2" sid="305658695138388" static="0" type="number">6</variable>
+        <variable constant="0" name="Team_p3" sid="777023773504849" static="0" type="number">3</variable>
+        <variable constant="0" name="Team_p4" sid="393235581569653" static="0" type="number">4</variable>
+        <event-group description="" sid="956330805120778" title="Kill instances">
+            <sub-events>
+                <event-group description="" sid="706359464741096" title="P1 Kills">
+                    <sub-events>
+                        <comment>P1 kills P2</comment>
+                        <event-block sid="993048837870997">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="263098919059038" type="Player">
+                                    <param id="0" name="Object">p2top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="217201531913528">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="875934758569840" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="328323635480430">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="730359611536369" type="Player">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="957427510708838" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="987122779804736" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="591431218229897" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="432054768685037" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="595901272593269" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="201930969823032" type="p2top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="756150625415655" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="996909708754260" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="118640370604874" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="806437309434315" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="157340493394353" type="Player2" />
+                                                <action id="-11" name="Subtract from" sid="889981202928839" type="System">
+                                                    <param id="0" name="Variable">Player2_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="499533900966320" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="730889229068503" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="160396923302002" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P1 Kills P3</comment>
+                        <event-block sid="811708917460966">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="156696319961320" type="Player">
+                                    <param id="0" name="Object">p3top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="590380998276803">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="842379724471802" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="671236044707951">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="850938424172335" type="Player">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="521614174335142" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="313942644277983" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="785638659304129" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="297807151452799" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="101074132206746" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="555336316974819" type="p3top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="821501457680066" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="541462383854693" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="686367886905079" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="662444032245828" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="180104047611212" type="Player3" />
+                                                <action id="-11" name="Subtract from" sid="440963853252847" type="System">
+                                                    <param id="0" name="Variable">Player3_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="931515334542951" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="391271695992521" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="718707503013083" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P1 kills P4</comment>
+                        <event-block sid="122893418978531">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="344090836953476" type="Player">
+                                    <param id="0" name="Object">p4top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="304628139213833">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="235761229406832" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="471044953351936">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="725626320241991" type="Player">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="357855727491496" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="596923524620315" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="281363139943979" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="546971083192214" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="843350263847727" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="354054151823239" type="p4top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="463494780668469" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="103734212812199" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="602489830068366" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="518215599456482" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="544885349917902" type="Player4" />
+                                                <action id="-11" name="Subtract from" sid="806759094938895" type="System">
+                                                    <param id="0" name="Variable">Player4_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="306092932552386" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="115040365009735" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="476173481849808" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="860307338597367" title="P2 Kills">
+                    <sub-events>
+                        <comment>P2 kills P1</comment>
+                        <event-block sid="711919216410272">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="276869704288162" type="Player2">
+                                    <param id="0" name="Object">p1top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="613342480518097">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="502726192435018" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="300688919167234">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="570603932299340" type="Player">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="763837086840204" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="915893125820569" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="798693367607036" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="451271916760889" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="691992573860671" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="982925317608906" type="p1top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="984519637827718" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="517356933867981" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="469554443379255" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="314402891791795" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="335948472131485" type="Player" />
+                                                <action id="-11" name="Subtract from" sid="840182765110549" type="System">
+                                                    <param id="0" name="Variable">Player1_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="542175004649910" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="103129979493597" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="634025444687187" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P2 kills P3</comment>
+                        <event-block sid="651337275333774">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="614235849759470" type="Player2">
+                                    <param id="0" name="Object">p3top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="663819015706951">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="371850102306946" type="System">
+                                            <param id="0" name="First value">Team_p2</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="378889433467302">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="509373329200584" type="Player2">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="922550704119908" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="371717570539917" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="435041487227357" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="422108859362110" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="319866688109914" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="771147448830434" type="p3top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="376888223407710" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="965929122721356" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="929380277920398" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="675127510914168" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="449176009709543" type="Player3" />
+                                                <action id="-11" name="Subtract from" sid="517036951077718" type="System">
+                                                    <param id="0" name="Variable">Player3_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="350153896633079" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="144213326906646" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="462727141264973" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P2 kills p4</comment>
+                        <event-block sid="987482526870810">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="728821505611008" type="Player2">
+                                    <param id="0" name="Object">p4top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="230822609731440">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="664627032233479" type="System">
+                                            <param id="0" name="First value">Team_p2</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="643993456410516">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="146812223442663" type="Player2">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="923859217269203" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="699204840737399" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="811151619774147" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="624923473579125" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="658363830872622" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="910426289300335" type="p4top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="998177477842926" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="618046825832732" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="762874721933237" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="971884978082116" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="841655205814264" type="Player4" />
+                                                <action id="-11" name="Subtract from" sid="285442710095112" type="System">
+                                                    <param id="0" name="Variable">Player4_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="306979227293308" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="223497621986981" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="112836823983708" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="959652177923005" title="P3 Kills">
+                    <sub-events>
+                        <comment>P3 kills P1</comment>
+                        <event-block sid="994266638343557">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="907311976607071" type="Player3">
+                                    <param id="0" name="Object">p1top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="280735632664562">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="567961653859097" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="648517965082076">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="900064429818882" type="Player3">
+                                                    <param id="0" name="Object">Player</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="367603682300649" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="423484481794787" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="177090161659907" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="927459483133573" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="879562274124414" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="872218545967829" type="p1top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="738794344790045" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="924546400075717" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="591725644480536" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="910447770842066" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="770664131364471" type="Player" />
+                                                <action id="-11" name="Subtract from" sid="293920027127582" type="System">
+                                                    <param id="0" name="Variable">Player1_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="978918140430875" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="572632233307302" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="393060449968747" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P3 kills P2</comment>
+                        <event-block sid="881044260915771">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="622226158846391" type="Player3">
+                                    <param id="0" name="Object">p2top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="877929022355855">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="205961593030858" type="System">
+                                            <param id="0" name="First value">Team_p2</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="640392063643048">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="562855730585938" type="Player2">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="243425432606567" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="319118212501337" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="418768159011299" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="234563635693988" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="100625077620265" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="425808387459124" type="p2top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="244511096962969" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="237991280344847" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="102190375659232" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="596068692856738" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="414258456777571" type="Player2" />
+                                                <action id="-11" name="Subtract from" sid="316104887565810" type="System">
+                                                    <param id="0" name="Variable">Player2_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="243193962616677" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="486364056683891" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="957730377564484" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P3 kills p4</comment>
+                        <event-block sid="652724891909423">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="170876398497703" type="Player3">
+                                    <param id="0" name="Object">p4top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="128252818628945">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="436120679154184" type="System">
+                                            <param id="0" name="First value">Team_p3</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="541719569992948">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="948020390558915" type="Player3">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="493153707948961" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="668545687040059" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="446001802636540" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="316497095288618" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="684993215444841" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="858228568090845" type="p4top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="731127835950665" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="812365716588475" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="611042262617710" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="287478392052576" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="322317636471950" type="Player4" />
+                                                <action id="-11" name="Subtract from" sid="912274882935691" type="System">
+                                                    <param id="0" name="Variable">Player4_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="187540710871038" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="563046388929038" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="257578001620048" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="473363845385290" title="P4 Kills">
+                    <sub-events>
+                        <comment>P4 kills P1</comment>
+                        <event-block sid="387690826569840">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="238145316990338" type="Player4">
+                                    <param id="0" name="Object">p1top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="451479729196064">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="576082746397415" type="System">
+                                            <param id="0" name="First value">Team_p1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="367828945277947">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="517316359806139" type="Player4">
+                                                    <param id="0" name="Object">Player</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="250638661970875" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="261359473383157" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="495030559474431" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="713881557739767" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="868637552050480" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="590817996473301" type="p1top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="929322825952987" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="751677039662651" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="890399410415665" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="477546061624258" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="938759704089824" type="Player" />
+                                                <action id="-11" name="Subtract from" sid="656192088126554" type="System">
+                                                    <param id="0" name="Variable">Player1_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="328132788080905" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="465580238128030" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="541667940587998" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P4 kills P2</comment>
+                        <event-block sid="496975093394389">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="481873984221609" type="Player4">
+                                    <param id="0" name="Object">p2top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="147306877825534">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="621303014237819" type="System">
+                                            <param id="0" name="First value">Team_p2</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="243628842988118">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="561531302056670" type="Player2">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="720993646446802" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="338080568859981" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="620855111377888" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="873752654241908" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="319462345727115" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="390321982262305" type="p2top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="730963010517796" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="957954441497888" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="550511817607558" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="402256556232989" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="656227618378938" type="Player2" />
+                                                <action id="-11" name="Subtract from" sid="387278264996535" type="System">
+                                                    <param id="0" name="Variable">Player2_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="310637932184070" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="840642919791866" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="620030261412258" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>P4 kills p3</comment>
+                        <event-block sid="727972949459905">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="202398231619116" type="Player4">
+                                    <param id="0" name="Object">p3top</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="843950465405729">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="812151612346225" type="System">
+                                            <param id="0" name="First value">Team_p3</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">Team_p4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="718483930103065">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="950979443790511" type="Player3">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="644785534461354" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="797296289052736" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="481719191256728" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="703059197291390" type="System">
+                                                    <param id="0" name="Object">Player3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="209333673903717" type="Jump">
+                                                    <param id="0" name="Audio file">death</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-10</param>
+                                                    <param id="1" name="Tag (optional)">&quot;SFX&quot;</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="197248730701433" type="p3top" />
+                                                <action id="-29" name="Set layout effect enabled" sid="762836873160226" type="System">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="374158311640551" type="System">
+                                                    <param id="0" name="Seconds">0.1</param>
+                                                </action>
+                                                <action id="-29" name="Set layout effect enabled" sid="934850304177777" type="System">
+                                                    <param id="0" name="Mode">0</param>
+                                                    <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="327206695574067" type="System">
+                                                    <param id="0" name="Seconds">0.2</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="271976053010596" type="Player3" />
+                                                <action id="-11" name="Subtract from" sid="475619994420213" type="System">
+                                                    <param id="0" name="Variable">Player3_Lives</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="535271490104739" type="System">
+                                                    <param id="0" name="Object">Player</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="417701822740827" type="System">
+                                                    <param id="0" name="Object">Player2</param>
+                                                </action>
+                                                <action id="-15" name="Restore object time scale" sid="398744515403135" type="System">
+                                                    <param id="0" name="Object">Player4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <comment>Not working but is it needed?</comment>
+        <event-group bookmark="1" description="" sid="503498427472384" title="Overlaping">
+            <sub-events>
+                <event-group description="" sid="230060133644878" title="P1">
+                    <sub-events>
+                        <event-block sid="925565014687564">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="714863097532627" type="Player">
+                                    <param id="0" name="Object">Player2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="766058979417080" type="Player">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="424798204834645" type="Player2">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="280334553388858">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="820342421763648" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="363933829503342" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="133137519421725">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="663830443292152" type="Player">
+                                    <param id="0" name="Object">Player3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="281800095873866" type="Player">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="703193497205072" type="Player3">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="525835752620685">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="195993146845593" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="808427426112171" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="606254099061483">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="672097657261759" type="Player">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="852872123347115" type="Player">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="199720834816076" type="Player4">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="431123664868910">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="546524003405454" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="853133599562718" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="919874546397952" title="P2">
+                    <sub-events>
+                        <event-block sid="779816106749856">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="837321188176543" type="Player2">
+                                    <param id="0" name="Object">Player3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="884009383529879" type="Player2">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="992061105176873" type="Player3">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="888765906276101">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="424493548676762" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="972757556162376" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="580976300061884">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="329346262188167" type="Player2">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="729428258733746" type="Player2">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="582883556222765" type="Player4">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="855053237936234">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="282737354618527" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="557910649784373" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="556852425258747" title="P3">
+                    <sub-events>
+                        <event-block sid="399434427884955">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="591347998621438" type="Player3">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="237440980653780" type="Player3">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                                <action id="-23" name="Move at angle" sid="481449335463415" type="Player4">
+                                    <param id="0" name="Angle">0</param>
+                                    <param id="1" name="Distance">16</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="333823402624856">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="414608943816375" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="739703058527659" type="Jump">
+                                            <param id="0" name="Audio file">overlaping</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-10</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="763046023360379" title="Collision">
+            <sub-events>
+                <comment>P1+P2</comment>
+                <event-block sid="813200142709353">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="438210129253057" type="Player">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="639760809556167">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="832207439790069" type="p2top">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="679014904718303">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="654833651688461" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player2.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="490754926744576" type="Player2">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="484446605745228" type="Player">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="278268413346283">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="494185233120495" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player2.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="349420961071673" type="Player2">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="727574892126131" type="Player">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P1+p3</comment>
+                <event-block sid="778934329848432">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="821475609772563" type="Player3">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="653722581592985">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="478960966729643" type="p1top">
+                                    <param id="0" name="Object">Player3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="261267038981134">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="948109617744203" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="741644718162947" type="Player3">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="679300438403586" type="Player">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="796779549032003">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="969621336051706" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="916882103095441" type="Player3">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="961347038018225" type="Player">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P1+p4</comment>
+                <event-block sid="713304426401918">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="685646871738426" type="Player4">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="181177762532736">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="663423295752816" type="p1top">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="153319117554409">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="999588009587388" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="243322807761604" type="Player4">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="226421947851046" type="Player">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="876380694046819">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="635664591485412" type="System">
+                                            <param id="0" name="First value">Player.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="496866465709536" type="Player4">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="587607493243548" type="Player">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P4+P2</comment>
+                <event-block sid="463070149243456">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="385369592446363" type="Player4">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="330331474914550">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="410475835779260" type="p2top">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="659513871579804">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="298455283254460" type="System">
+                                            <param id="0" name="First value">Player2.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="791322301241573" type="Player4">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="546788505120768" type="Player2">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="618101972395078">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="683848711281351" type="System">
+                                            <param id="0" name="First value">Player2.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="491802972294173" type="Player4">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="264737203599931" type="Player2">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P3+P2</comment>
+                <event-block sid="431707759710860">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="671322687366999" type="Player3">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="141850078500164">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="325946629206457" type="p2top">
+                                    <param id="0" name="Object">Player3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="952584318285972">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="515214090730697" type="System">
+                                            <param id="0" name="First value">Player2.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="328308934509541" type="Player3">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="365590097995387" type="Player2">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="971650428182996">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="204002466075416" type="System">
+                                            <param id="0" name="First value">Player2.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player3.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="539546435023321" type="Player3">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="732029562528400" type="Player2">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P4+P3</comment>
+                <event-block sid="155487210380094">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="902684973157572" type="Player4">
+                            <param id="0" name="Object">Player3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="345619968375789">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="228948399855318" type="p3top">
+                                    <param id="0" name="Object">Player4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="394605706405003">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="444121562009983" type="System">
+                                            <param id="0" name="First value">Player3.X</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="344985924191489" type="Player4">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="316425092873150" type="Player3">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="626370908647167">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="620454203205929" type="System">
+                                            <param id="0" name="First value">Player3.X</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">Player4.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="389669150935218" type="Player4">
+                                            <param id="0" name="Vector X">-80000</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="734228753817663" type="Player3">
+                                            <param id="0" name="Vector X">80000</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

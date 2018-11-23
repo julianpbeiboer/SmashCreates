@@ -1,0 +1,1203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_Platforms_hazards</name>
+    <events>
+        <event-group description="" sid="752638564953679" title="Spring">
+            <sub-events>
+                <event-block sid="840486748070962">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="410878492679454" type="Player">
+                            <param id="0" name="Object">Spring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="620457390968949" type="Player">
+                            <param id="0" name="Jump sustain">100</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="585259523468688" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="396519965964343" type="Player">
+                            <param id="0" name="Jump strength">800</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="827076617540003">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="333053901894992" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="118361881600070" type="Player">
+                            <param id="0" name="Jump sustain">0</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="375383862331794" type="Player">
+                            <param id="0" name="Jump strength">650</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="539116379788979">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="711086488297104" type="Player2">
+                            <param id="0" name="Object">Spring</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="606976573586413" type="Player2">
+                            <param id="0" name="Jump sustain">100</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="797829072547860" type="Player2">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="532173667351602" type="Player2">
+                            <param id="0" name="Jump strength">800</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="270979673585686">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="882591133676933" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="935981066880548" type="Player2">
+                            <param id="0" name="Jump sustain">0</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="175568623543884" type="Player2">
+                            <param id="0" name="Jump strength">650</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="171009380385909" title="Rising Ground">
+            <sub-events>
+                <event-block sid="887568816662651">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="794836672738173" type="RisingGround">
+                            <param id="0" name="Object">ReverseDirection</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="678635316505511" type="RisingGround">
+                            <param id="0" name="Object">ReverseDirection</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Low gravity triggered when it shouldn&apos;t, delayed maybe a timer issue</comment>
+        <event-group bookmark="1" description="" sid="572139912775387" title="Random Crate">
+            <sub-events>
+                <event-group description="" sid="690011876523256" title="Player Collisions">
+                    <sub-events>
+                        <event-block sid="355790328728642">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="113134245807076" type="Player">
+                                    <param id="0" name="Object">RandomCreateTop</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="953099233972244" type="RandomItemCrate" />
+                                <action id="-9" name="Destroy" sid="197044242583269" type="RandomCreateTop" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="402397144427116">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="504494587198967" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="701632036699892" type="Player">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="533927506808369">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="479424082768710" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="543502487953954" type="Player">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="206717163325568">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="447268536532909" type="Player2">
+                                    <param id="0" name="Object">RandomCreateTop</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="597783858516828" type="RandomItemCrate" />
+                                <action id="-9" name="Destroy" sid="623978514312841" type="RandomCreateTop" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="258684687588490">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="604530061442678" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="561091588711149" type="Player2">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="403031250610648">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="843717446832267" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="705180492019945" type="Player2">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="572477396389006">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="534265134421220" type="Player3">
+                                    <param id="0" name="Object">RandomCreateTop</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="222484106770842" type="RandomItemCrate" />
+                                <action id="-9" name="Destroy" sid="497500147379826" type="RandomCreateTop" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="358567814396591">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="292399745024687" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="428498921064509" type="Player3">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="329608120199910">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="743635849177705" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="237838917889233" type="Player3">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="207602021967661">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="514323282546061" type="Player4">
+                                    <param id="0" name="Object">RandomCreateTop</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="541578936594715" type="RandomItemCrate" />
+                                <action id="-9" name="Destroy" sid="229915569307942" type="RandomCreateTop" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="105456337418984">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="517965082752359" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="491849596947200" type="Player4">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="579268181906556">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="400536835333174" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="178502210072285" type="Player4">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="951346470499792">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="980712610124561" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="304159285470057" type="RandomCreateTop">
+                            <param id="0" name="Object">RandomItemCrate</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="662669631271310">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="227465570252571" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="275558037553329" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="596443518183967" type="System">
+                            <param id="0" name="Object to create">RandomItemCrate</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">320</param>
+                            <param id="3" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="154169184099298">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="570471972003282" type="RandomItemCrate" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-10" name="Set value" sid="244580399273229" type="RandomItemCrate">
+                            <param id="0" name="Instance variable">EventOrPower</param>
+                            <param id="1" name="Value">round(random(0,1))</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="133837371231011" type="RandomItemCrate">
+                            <param id="0" name="Instance variable">EventOrPower</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Crate lands on player</comment>
+                <event-block sid="153071059077726">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="833361128969490" type="RandomItemCrate">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="506701286610555">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="907498282035298" type="System">
+                                    <param id="0" name="First value">Player.Y</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="929055229280531" type="RandomItemCrate">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="527471206276879">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="593781754647205" type="System">
+                                    <param id="0" name="First value">Player.X-16</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="826337296941876" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">-150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="371572035333461">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="608679617709523" type="System">
+                                    <param id="0" name="First value">Player.X+16</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="285009129564357" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="176198376414387">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="873016932226628" type="RandomItemCrate">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="659528660719224">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="888996046501357" type="System">
+                                    <param id="0" name="First value">Player2.Y</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="147915534901434" type="RandomItemCrate">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="868028195934964">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="491386522382324" type="System">
+                                    <param id="0" name="First value">Player2.X-16</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="886349046916695" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">-150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="712691065327482">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="947648998703736" type="System">
+                                    <param id="0" name="First value">Player2.X+16</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="358330611216774" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="229091637548807">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="700202045081006" type="RandomItemCrate">
+                            <param id="0" name="Object">Player3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="805028971356919">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="856713222500872" type="System">
+                                    <param id="0" name="First value">Player3.Y</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="414011212371518" type="RandomItemCrate">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="405461015090471">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="226423999425678" type="System">
+                                    <param id="0" name="First value">Player3.X-16</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="973836692306235" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">-150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="873150395659058">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="706885706229800" type="System">
+                                    <param id="0" name="First value">Player3.X+16</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="647790475111834" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="762862415294268">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="953043019678543" type="RandomItemCrate">
+                            <param id="0" name="Object">Player4</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="665473023949724">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="371061189325235" type="System">
+                                    <param id="0" name="First value">Player4.Y</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="120011542749001" type="RandomItemCrate">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="267745363861679">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="917422729045222" type="System">
+                                    <param id="0" name="First value">Player4.X-16</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="346047054542742" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">-150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="349240254843994">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="475532382983110" type="System">
+                                    <param id="0" name="First value">Player4.X+16</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">RandomItemCrate.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="991349928726845" type="RandomItemCrate">
+                                    <param id="0" name="Vector X">150</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Crate is destroyed</comment>
+                <event-block sid="900614165069817">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="574765699995433" type="RandomItemCrate" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Event</comment>
+                        <event-block sid="258128727657979">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="888173375443729" type="RandomItemCrate">
+                                    <param id="0" name="Instance variable">EventOrPower</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="536729129194935" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Event</param>
+                                    <param id="1" name="Value">round(random(1,3))</param>
+                                </action>
+                                <action disabled="1" id="-10" name="Set value" sid="529101126131797" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Event</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="771571594828062" type="System">
+                                    <param id="0" name="Seconds">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="473670784787291" type="System">
+                                    <param id="0" name="Object to create">RandomItemCrate</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(30,610))</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action disabled="1" id="-3" name="Create object" sid="470647096893805" type="System">
+                                    <param id="0" name="Object to create">RandomItemCrate</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">320</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="602885547606215" type="System">
+                                    <param id="0" name="Object to create">RandomCreateTop</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>PowerUP</comment>
+                        <event-block disabled="1" sid="191268825900511">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="865169371716815" type="RandomItemCrate">
+                                    <param id="0" name="Instance variable">EventOrPower</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="752026220310572" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Value">round(random(1,2))</param>
+                                </action>
+                                <action disabled="1" id="-10" name="Set value" sid="170960384488262" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="142351447009992" type="System">
+                                    <param id="0" name="Seconds">20</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="182253007303424" type="System">
+                                    <param id="0" name="Object to create">RandomItemCrate</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(30,610))</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action disabled="1" id="-3" name="Create object" sid="315906547884677" type="System">
+                                    <param id="0" name="Object to create">RandomItemCrate</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">320</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="164870201164721" type="System">
+                                    <param id="0" name="Object to create">RandomCreateTop</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Screen shake stops when player is killed</comment>
+        <event-group bookmark="1" description="" sid="364759673255531" title="Meteor Shower -EV">
+            <sub-events>
+                <event-block any="1" sid="659130796925194">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="749029467938341" type="MeteorShower">
+                            <param id="0" name="Object">groundtile</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="276536053359819" type="MeteorShower">
+                            <param id="0" name="Object">Platform1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="426083481781740" type="MeteorShower" />
+                    </actions>
+                </event-block>
+                <event-block sid="960489323837744">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="643331344133687" type="MeteorShower">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="552491040898969" type="Player" />
+                        <action id="-11" name="Subtract from" sid="471815293517440" type="System">
+                            <param id="0" name="Variable">Player1_Lives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="670476159329596" type="p1top" />
+                    </actions>
+                </event-block>
+                <event-block sid="571577019843219">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="691822881611199" type="MeteorShower">
+                            <param id="0" name="Object">Player2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="292719208819163" type="Player2" />
+                        <action id="-9" name="Destroy" sid="846204898568446" type="p2top" />
+                        <action id="-11" name="Subtract from" sid="946186723508906" type="System">
+                            <param id="0" name="Variable">Player2_Lives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="382420744237903">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="271953898054819" type="MeteorShower">
+                            <param id="0" name="Object">Player3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="579819263460125" type="Player3" />
+                        <action id="-11" name="Subtract from" sid="631773697175695" type="System">
+                            <param id="0" name="Variable">Player3_Lives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="599831708903457" type="p3top" />
+                    </actions>
+                </event-block>
+                <event-block sid="981014012891692">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="241597595282050" type="MeteorShower">
+                            <param id="0" name="Object">Player4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="518947933283699" type="Player4" />
+                        <action id="-11" name="Subtract from" sid="974526861822766" type="System">
+                            <param id="0" name="Variable">Player4_Lives</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="410123450419558" type="p4top" />
+                    </actions>
+                </event-block>
+                <event-block sid="678554214881372">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="141483236879690" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Event</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="922369840241311">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="593987194832165" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="451019880198150" type="System">
+                                    <param id="0" name="Object to create">P1_Locator2</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">320</param>
+                                    <param id="3" name="Y">16</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="725680786150605" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="950339453401350" type="P1_Locator2" />
+                                <action id="-3" name="Create object" sid="262914547888579" type="System">
+                                    <param id="0" name="Object to create">MeteorShower</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(0,160))</param>
+                                    <param id="3" name="Y">round(random(-30,-300))</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="652210585684969" type="System">
+                                    <param id="0" name="Object to create">MeteorShower</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(160,320))</param>
+                                    <param id="3" name="Y">round(random(-30,-300))</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="217319854836328" type="System">
+                                    <param id="0" name="Object to create">MeteorShower</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(320,480))</param>
+                                    <param id="3" name="Y">round(random(-30,-300))</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="563367607206327" type="System">
+                                    <param id="0" name="Object to create">MeteorShower</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">round(random(480,640))</param>
+                                    <param id="3" name="Y">round(random(-30,-300))</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="961658337504143" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Event</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="440480499683778" title="Bubble Shield -PU" />
+        <event-group description="" disabled="1" sid="949630978322215" title="Low Gravity -PU">
+            <sub-events>
+                <event-block disabled="1" sid="204534308783931">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="274607393731693" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Power</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="476493010238914">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="579779102946653" type="Player">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="854720559097149">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="577355380404948" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="250035936938941" type="Player">
+                                            <param id="0" name="Gravity">750</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="143683497091399" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="111950195262101" type="Player">
+                                            <param id="0" name="Gravity">1500</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="259035837573633" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="957736940023504" type="Player">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="921299946946924">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="469592208621357" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="408905340612571">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="308430874327379" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="532953641060844" type="Player2">
+                                            <param id="0" name="Gravity">750</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="791933912688226" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="880203578146286" type="Player2">
+                                            <param id="0" name="Gravity">1500</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="568239816192979" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="965071002654460" type="Player2">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="281203652628251">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="869855887045206" type="Player3">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="668653237395842">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="338065495712176" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="356871076046303" type="Player3">
+                                            <param id="0" name="Gravity">750</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="537229154981140" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="120679898697275" type="Player3">
+                                            <param id="0" name="Gravity">1500</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="951635879299910" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="629151320269843" type="Player3">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="761977130597424">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="874462794861734" type="Player4">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="626250390885617">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="974228214969098" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="907332001279112" type="Player4">
+                                            <param id="0" name="Gravity">750</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="184902664756371" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="5" name="Set gravity" sid="803423061339183" type="Player4">
+                                            <param id="0" name="Gravity">1500</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="637413460385635" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="395727588951143" type="Player4">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="291728260315116" title="Up is Down - EV">
+            <sub-events>
+                <event-block sid="343663573364311">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="417691538113233" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Event</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="485943826488847">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="848733865145716" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-22" name="Set layout angle" sid="579935799418280" type="System">
+                                    <param id="0" name="Angle">180</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="889547958222871" type="System">
+                                    <param id="0" name="Seconds">10</param>
+                                </action>
+                                <action id="-22" name="Set layout angle" sid="564337589789040" type="System">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="623723832909161" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Event</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="836753917350839" title="Speed Boost -PU">
+            <sub-events>
+                <event-block disabled="1" sid="581933437942991">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="461933486250317" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Power</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="718965187617872">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="978116295141625" type="Player">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="477902966010217">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="769057629688973" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="155855758392617" type="Player">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="294563793564067" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="730463176735355" type="Player">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="326148808911327" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="830714556681507" type="Player">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="845940843831274">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="128115845718070" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Power</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="808912601810776">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="699118010551829" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="215587748537449">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="850012837208033" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="743666445349523" type="Player2">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="597499549735848" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="126900575441646" type="Player2">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="535414480077832" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="338051303255577" type="Player2">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="409731695812849">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="458327360421574" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Power</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="937717049486499">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="427163735557229" type="Player3">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="701291581761745">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="119128346978411" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="281603387357923" type="Player3">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="285411903535238" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="923634065326896" type="Player3">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="187558895884048" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="339522183092756" type="Player3">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="472458155636202">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="988835033362943" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Power</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="500172463179141">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="578865666453576" type="Player4">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="205559580815844">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="195712195234733" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="114141533667521" type="Player4">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="924751270066648" type="System">
+                                            <param id="0" name="Seconds">10</param>
+                                        </action>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="136802905102580" type="Player4">
+                                            <param id="0" name="Max Speed">250</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="189917022860612" type="GeneralArrayInstance">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="618305624563544" type="Player4">
+                                            <param id="0" name="Instance variable">Power</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Resets on player death</comment>
+        <event-group bookmark="1" description="" sid="620562612089775" title="Slow-Mo - EV">
+            <sub-events>
+                <event-block sid="859381479069851">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="908783830888912" type="GeneralArrayInstance">
+                            <param id="0" name="Instance variable">Event</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="886945404211884">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="166714588123028" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-14" name="Set object time scale" sid="374326494529727" type="System">
+                                    <param id="0" name="Object">Player</param>
+                                    <param id="1" name="Time scale">0.5</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="504411828680808" type="System">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="Time scale">0.5</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="917525647895847" type="System">
+                                    <param id="0" name="Object">Player3</param>
+                                    <param id="1" name="Time scale">0.5</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="973949251500272" type="System">
+                                    <param id="0" name="Object">Player4</param>
+                                    <param id="1" name="Time scale">0.5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="960565711323379" type="System">
+                                    <param id="0" name="Seconds">10</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="482321624131143" type="System">
+                                    <param id="0" name="Object">Player</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="677016100795158" type="System">
+                                    <param id="0" name="Object">Player2</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="704692647362572" type="System">
+                                    <param id="0" name="Object">Player3</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-14" name="Set object time scale" sid="318091215630062" type="System">
+                                    <param id="0" name="Object">Player4</param>
+                                    <param id="1" name="Time scale">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="860704709830589" type="GeneralArrayInstance">
+                                    <param id="0" name="Instance variable">Event</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

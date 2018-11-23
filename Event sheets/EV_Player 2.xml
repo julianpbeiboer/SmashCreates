@@ -1,0 +1,1979 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_Player 2</name>
+    <events>
+        <variable constant="0" name="Type_p2" sid="661155535655963" static="0" type="number">1</variable>
+        <variable constant="0" name="Ability_p2" sid="621603460434704" static="0" type="number">0</variable>
+        <variable constant="0" name="P2_taunt" sid="613498781287534" static="0" type="number">0</variable>
+        <event-group description="" sid="410717107314478" title="Player2">
+            <sub-events>
+                <event-block sid="499472232827163">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="349211185036932" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="836546652950611" type="Squib_Taunt">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="481781836418476" type="p2top">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="140820066347626" type="P2_Locator">
+                            <param id="0" name="X">Player2.X</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="364220867816868" type="Arrow2">
+                            <param id="0" name="Object">Player2</param>
+                            <param id="1" name="Image point (optional)">6</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="643494960512508">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="939565620885197" type="System">
+                                    <param id="0" name="Variable">P2_taunt</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="135727645184634" type="Squib_Taunt">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="607422299584458" title="Taunt">
+                    <sub-events>
+                        <event-block sid="516900459643502">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="192091637347672" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="962108643660614" type="System">
+                                    <param id="0" name="Variable">P2_taunt</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="238448919336414" type="Squib_Taunt">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="859243875323227" type="Player2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="708835287897600">
+                            <conditions>
+                                <condition id="7" name="On button released" sid="639268671930714" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="502145807570064" type="Squib_Taunt">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="457343861982149" type="Player2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="677887043974672" type="System">
+                                    <param id="0" name="Variable">P2_taunt</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="592064643726488">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="727714550873911" type="Keyboard">
+                                    <param id="0" name="Key">103</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="508455479573653" type="System">
+                                    <param id="0" name="Variable">P2_taunt</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="901163867847600" type="Squib_Taunt">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="741713136568715" type="Player2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="218937813080751">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="314882004056419" type="Keyboard">
+                                    <param id="0" name="Key">103</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="554002328058471" type="System">
+                                    <param id="0" name="Variable">P2_taunt</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="685099826412029" type="Squib_Taunt">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="585744850297451" type="Player2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="579619026949959">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="103158619099498" type="Squib_Taunt">
+                                    <param id="0" name="Object">Player2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-24" name="Move to top" sid="118730814657332" type="Squib_Taunt" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <comment>Player 2</comment>
+                <event-block any="1" sid="712405896425324">
+                    <conditions>
+                        <condition id="4" inverted="1" name="Has gamepads" sid="751472691092316" type="ControlerXbox" />
+                        <condition id="-14" name="Compare variable" sid="205146941310923" type="System">
+                            <param id="0" name="Variable">GamePadNumber</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>P2 sheild</comment>
+                        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+                        <event-block any="1" sid="390117368388332">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="970771778061459" type="Keyboard">
+                                    <param id="0" name="Key">37</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="545191172471881" type="Player2">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="629004821726560">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="690825521545976" type="Keyboard">
+                                    <param id="0" name="Key">39</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="325468381814433" type="Player2">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="933004884849118">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="848027681796642" type="Keyboard">
+                                    <param id="0" name="Key">104</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="309483380457168" type="Player2">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="835391049909901">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="627875574074864" type="Keyboard">
+                                    <param id="0" name="Key">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="818338374468539" type="Player2">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Slam height increase speed</comment>
+                        <event-block sid="330966956118196">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="102239294678339" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="275299888437150" type="Player2">
+                                    <param id="0" name="Gravity">10000</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="517817785313412" type="System">
+                                    <param id="0" name="Seconds">0.125</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="683889628411989" type="Player2">
+                                    <param id="0" name="Gravity">1500</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="549928654192346">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="473474794975506" type="Keyboard">
+                                    <param id="0" name="Key">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="12" name="Fall through" sid="139076593708667" type="Player2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="140722941501173">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="601038687174547" type="Keyboard">
+                                    <param id="0" name="Key">102</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="305234485682571" type="Player2">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="243996534866269">
+                    <conditions>
+                        <condition id="4" name="Has gamepads" sid="444036085213831" type="ControlerXbox" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Mirror the player&apos;s image so they appear facing the right way when moving left or right.</comment>
+                        <event-block any="1" sid="110773209625399">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="854191950928623" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">2</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="627080453022985" type="Player2">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="654112639874124">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="641982983950658" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="231510921721107" type="Player2">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="349021044158543">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="804506273448913" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="898335519929153" type="Player2">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="376722247972099">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="908310943667269" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="252334622369002" type="Player2">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="429085568095048">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="718371783092873" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">2</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="626242902995866" type="Player2">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="542621860316886">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="806473403172594" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">2</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="726163105285098" type="Squib_Taunt">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="201454395112497">
+                            <conditions>
+                                <condition id="5" name="Compare axis" sid="269970459334740" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Axis">0</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="309567469228567" type="Squib_Taunt">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Slam height increase speed</comment>
+                        <event-group description="" sid="702903079789205" title="Slam2">
+                            <sub-events>
+                                <event-block sid="961172541392401">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="352551008244112" type="Player2" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="623656437535479">
+                                            <conditions>
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="594805570610035" type="Player2">
+                                                    <param id="0" name="Instance variable">Power</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="473633475345076">
+                                                    <conditions>
+                                                        <condition id="6" name="On button pressed" sid="702733123923282" type="ControlerXbox">
+                                                            <param id="0" name="Gamepad">1</param>
+                                                            <param id="1" name="Button">7</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="364718866970298" type="Player2">
+                                                            <param id="0" name="Gravity">10000</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="757396088061862" type="System">
+                                                            <param id="0" name="Seconds">0.125</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="759459785960399" type="Player2">
+                                                            <param id="0" name="Gravity">1500</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="211143610371711">
+                                                    <conditions>
+                                                        <condition id="6" name="On button pressed" sid="902741136215524" type="ControlerXbox">
+                                                            <param id="0" name="Gamepad">1</param>
+                                                            <param id="1" name="Button">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="964417137278574" type="Player2">
+                                                            <param id="0" name="Gravity">10000</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="833276088038079" type="System">
+                                                            <param id="0" name="Seconds">0.125</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="876545994175829" type="Player2">
+                                                            <param id="0" name="Gravity">1500</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <comment>Player Low gravity power up</comment>
+                                        <event-block sid="440087432679203">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="427209267755489" type="Player2">
+                                                    <param id="0" name="Instance variable">Power</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="506394147966733">
+                                                    <conditions>
+                                                        <condition id="6" name="On button pressed" sid="476688743254133" type="ControlerXbox">
+                                                            <param id="0" name="Gamepad">1</param>
+                                                            <param id="1" name="Button">7</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="518592455026513" type="Player2">
+                                                            <param id="0" name="Gravity">10000</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="647859501933588" type="System">
+                                                            <param id="0" name="Seconds">0.125</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="322171948695944" type="Player2">
+                                                            <param id="0" name="Gravity">750</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="323314141203262">
+                                                    <conditions>
+                                                        <condition id="6" name="On button pressed" sid="346535730039725" type="ControlerXbox">
+                                                            <param id="0" name="Gamepad">1</param>
+                                                            <param id="1" name="Button">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="616022287823660" type="Player2">
+                                                            <param id="0" name="Gravity">10000</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="594949739227126" type="System">
+                                                            <param id="0" name="Seconds">0.125</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="5" name="Set gravity" sid="719420812096551" type="Player2">
+                                                            <param id="0" name="Gravity">750</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <comment>Fallthrough</comment>
+                        <event-block sid="338971462317935">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="678789774342157" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">7</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="12" name="Fall through" sid="337520145181948" type="Player2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="450272862335759">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="783799758246622" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="12" name="Fall through" sid="161699725308257" type="Player2" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P2 destroyed</comment>
+                <event-block sid="740794385076895">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="600477692672399" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="202310568452577" type="AwLOL_Taunt">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="617703465616326" type="Arrow2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="707660599015087">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="593016432125967" type="System">
+                                    <param id="0" name="Variable">Player2_Lives</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="679868793042965" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="962037574418045" type="System">
+                                    <param id="0" name="Object to create">Player2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">random(190,290)</param>
+                                    <param id="3" name="Y">-2000</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="512597298398952" type="Player2">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="998672306149491" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="884100494057743" type="System">
+                                    <param id="0" name="Object to create">p2top</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">159</param>
+                                    <param id="3" name="Y">144&#x0D;&#x0A;</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="453052425497135" type="Player2">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="742046186425084" type="Arrow2">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="192792176022372" title="P2-Shield">
+            <sub-events>
+                <event-group description="" disabled="1" sid="166923459867439" title="Wall jump2">
+                    <sub-events>
+                        <event-block disabled="1" sid="624873037892208">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="489890812359232" type="System">
+                                    <param id="0" name="Variable">Type_p2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="723077971067559">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="630118479555238" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">1</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="413580013325717" type="Player2" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="768401796790858">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="444255487261180" type="Player2">
+                                                    <param id="0" name="Instance variable">WallJump</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="641808388043571">
+                                                    <conditions>
+                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="388537187466038" type="Player2">
+                                                            <param id="0" name="Side">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="407757804203257" type="Player2">
+                                                            <param id="0" name="Vector Y">-700</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="931071704828820" type="Player2">
+                                                            <param id="0" name="Vector X">250</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="691955680011201" type="Player2">
+                                                            <param id="0" name="Instance variable">WallJump</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="169046671024726" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="877995991682203" type="Player2">
+                                                            <param id="0" name="Instance variable">WallJump</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="347564266662637">
+                                    <conditions>
+                                        <condition id="5" name="Compare axis" sid="194384234948543" type="ControlerXbox">
+                                            <param id="0" name="Gamepad">1</param>
+                                            <param id="1" name="Axis">0</param>
+                                            <param id="2" name="Comparison">2</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="782714502347200" type="Player2" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="185847759101418">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="458823021344085" type="Player2">
+                                                    <param id="0" name="Instance variable">WallJump</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="742790797267269">
+                                                    <conditions>
+                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="194552123043888" type="Player2">
+                                                            <param id="0" name="Side">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="248484087184734" type="Player2">
+                                                            <param id="0" name="Vector Y">-700</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="360830147711266" type="Player2">
+                                                            <param id="0" name="Vector X">-250</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="156256308740399" type="Player2">
+                                                            <param id="0" name="Instance variable">WallJump</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="197767194052153" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="482896555581712" type="Player2">
+                                                            <param id="0" name="Instance variable">WallJump</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="323072076192829">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="368156121940307" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="892392357083879" type="SheildP2" />
+                    </actions>
+                </event-block>
+                <event-block sid="464620814208965">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="374135951615026" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="236554028472282" type="Player2">
+                            <param id="0" name="Max Speed">250</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="472793330205025" type="Player2">
+                            <param id="0" name="Animation">&quot;esky&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Hold shield </comment>
+                        <comment>modified controls</comment>
+                        <event-block any="1" bookmark="1" sid="732028403675462">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="900770741013598" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="753093979613649">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="642342737771253" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="131543417300734" type="Player2">
+                                            <param id="0" name="Object">SheildP2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="796071203008702">
+                            <conditions>
+                                <condition id="7" name="On button released" sid="550970154809826" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="833532116985623" type="SheildP2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="912226984021760">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="855634231278224" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="307821828494404" type="SheildP2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="907404736453309">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="934043556626795" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="246077894030687">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="243791218691114" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="100763589777038" type="Player2">
+                                            <param id="0" name="Object">SheildP2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="456278068315793">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="457761359257118" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="651414966047194" type="SheildP2" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="151629877699772">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="843915927740854" type="Keyboard">
+                                    <param id="0" name="Key">38</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="379663669348339" type="SheildP2" />
+                            </actions>
+                        </event-block>
+                        <comment>Sheild Stun only less than 0.3 seconds</comment>
+                        <event-group description="" sid="896249220166771" title="Shield Stun2">
+                            <sub-events>
+                                <comment>Sheild Stun only less than 0.3 seconds</comment>
+                                <event-block sid="902456244322198">
+                                    <conditions>
+                                        <condition id="-3" name="Is on-screen" sid="480620766448149" type="SheildP2" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="345008117147279">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="859681556136528" type="System">
+                                                    <param id="0" name="Variable">Ability_p2</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="630871951064202">
+                                                    <conditions>
+                                                        <condition id="-6" name="Every X seconds" sid="741809389025449" type="System">
+                                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="686841960576311" type="System">
+                                                            <param id="0" name="Variable">Ability_p2</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="759578309754682">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="883313697822561" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="136980768460796" type="System">
+                                            <param id="0" name="Variable">Ability_p2</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="771033287302362">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="734033617892550" type="System">
+                                            <param id="0" name="Variable">Ability_p2</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="124622483199893">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="948702279553997" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="906522938395124">
+                                                    <conditions>
+                                                        <condition id="0" name="On collision with another object" sid="960136703999044" type="Player">
+                                                            <param id="0" name="Object">SheildP2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-14" name="Set object time scale" sid="286429647066498" type="System">
+                                                            <param id="0" name="Object">Player</param>
+                                                            <param id="1" name="Time scale">0</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="730086566320401" type="Player">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="707957732936306" type="System">
+                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="982921989184878" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="411794983568619" type="SheildP2" />
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="429314656469157" type="Player">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                        <action id="-14" name="Set object time scale" sid="889305465353072" type="System">
+                                                            <param id="0" name="Object">Player</param>
+                                                            <param id="1" name="Time scale">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="751703097141845">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="602333861182278" type="System">
+                                                    <param id="0" name="First value">Team_p2</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="773507093987168">
+                                                    <conditions>
+                                                        <condition id="0" name="On collision with another object" sid="345194110000090" type="Player3">
+                                                            <param id="0" name="Object">SheildP2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-14" name="Set object time scale" sid="821156916448868" type="System">
+                                                            <param id="0" name="Object">Player3</param>
+                                                            <param id="1" name="Time scale">0</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="171592601731092" type="Player3">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="480442334993182" type="System">
+                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="873472692162723" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="577411824448329" type="SheildP2" />
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="483005655098489" type="Player3">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                        <action id="-14" name="Set object time scale" sid="539203940950795" type="System">
+                                                            <param id="0" name="Object">Player3</param>
+                                                            <param id="1" name="Time scale">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="273166955333445">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="568632350820665" type="System">
+                                                    <param id="0" name="First value">Team_p2</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="941269007279974">
+                                                    <conditions>
+                                                        <condition id="0" name="On collision with another object" sid="220695936460120" type="Player4">
+                                                            <param id="0" name="Object">SheildP2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-14" name="Set object time scale" sid="529275564554248" type="System">
+                                                            <param id="0" name="Object">Player4</param>
+                                                            <param id="1" name="Time scale">0</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="497475334516592" type="Player4">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="606367098465385" type="System">
+                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="954204844007134" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="206272515775054" type="SheildP2" />
+                                                        <action behavior="Platform" id="11" name="Set enabled" sid="385058526169063" type="Player4">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                        <action id="-14" name="Set object time scale" sid="325716335300495" type="System">
+                                                            <param id="0" name="Object">Player4</param>
+                                                            <param id="1" name="Time scale">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="315994247107751">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="813417854444352" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="423394334249125">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="876267935180354" type="Player">
+                                                    <param id="0" name="Object">SheildP2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="589738018778043" type="Player">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="928395521344441" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="188162997254121" type="SheildP2" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="943831708020332">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="279851365432722" type="Player3">
+                                                    <param id="0" name="Object">SheildP2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="479180297142604" type="Player3">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="231118546263463" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="316519742703980" type="SheildP2" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="592144589206636">
+                                            <conditions>
+                                                <condition id="0" name="On collision with another object" sid="493389410135540" type="Player4">
+                                                    <param id="0" name="Object">SheildP2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="134377066325126" type="Player4">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="655066859338830" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="603375940730074" type="SheildP2" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="339645458679586" title="P2-Dash">
+            <sub-events>
+                <event-block sid="774763555490161">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="195011793973257" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="862379076219621" type="Player2">
+                            <param id="0" name="Animation">&quot;BMO&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Controller</comment>
+                        <event-block sid="320113570687998">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="453169739194269" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="930749518015988" type="Player2">
+                                    <param id="0" name="Acceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="606424031461461" type="Player2">
+                                    <param id="0" name="Deceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="880052399193348" type="Player2">
+                                    <param id="0" name="Max Speed">DashSpeed</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="906967556287733" type="System">
+                                    <param id="0" name="Seconds">0.08</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="756371299043398" type="Player2">
+                                    <param id="0" name="Max Speed">MaxSpeedNormal_0</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="723080137783476" type="Player2">
+                                    <param id="0" name="Acceleration">2000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="524983416673119" type="Player2">
+                                    <param id="0" name="Deceleration">2000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="194469027761945">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="148316348713725" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="268084956691577" type="Player2">
+                                    <param id="0" name="Acceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="196508001290580" type="Player2">
+                                    <param id="0" name="Deceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="935793364872915" type="Player2">
+                                    <param id="0" name="Max Speed">DashSpeed</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="590974984981493" type="System">
+                                    <param id="0" name="Seconds">0.08</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="447645099780331" type="Player2">
+                                    <param id="0" name="Max Speed">MaxSpeedNormal_0</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="416332953022271" type="Player2">
+                                    <param id="0" name="Acceleration">2000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="372466553190004" type="Player2">
+                                    <param id="0" name="Deceleration">2000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="988307938756267">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="461893157706779" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="274081004565735" type="Player2">
+                                    <param id="0" name="Acceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="631514654395445" type="Player2">
+                                    <param id="0" name="Deceleration">20000</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="643135454826188" type="Player2">
+                                    <param id="0" name="Max Speed">DashSpeed</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="838528887436156" type="System">
+                                    <param id="0" name="Seconds">0.08</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="885666378619672" type="Player2">
+                                    <param id="0" name="Max Speed">MaxSpeedNormal_0</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="608970082617227" type="Player2">
+                                    <param id="0" name="Acceleration">2000</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="826254670679481" type="Player2">
+                                    <param id="0" name="Deceleration">2000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Dash Stun</comment>
+                        <event-group description="" disabled="1" sid="546023485607627" title="Dash Stun2">
+                            <sub-events>
+                                <event-block disabled="1" sid="202254587607642">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="934528638694289" type="Player2">
+                                            <param id="0" name="Object">Player</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="307019676034585">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="213195015784527" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="684459227663042">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="965972428096396" type="System">
+                                                            <param id="0" name="First value">Player2.Platform.MaxSpeed</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">850</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block disabled="1" sid="390907114782906">
+                                                            <conditions>
+                                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="350260391003884" type="p1top">
+                                                                    <param id="0" name="Object">Player2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block disabled="1" sid="343147946982646">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="451538079933878" type="Player2">
+                                                                            <param id="0" name="Side">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="395570645173626" type="System">
+                                                                            <param id="0" name="Object">Player</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="760929009052656" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="729504935846239" type="System">
+                                                                            <param id="0" name="Object">Player</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block disabled="1" sid="919839966208429">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="291232465588570" type="Player2">
+                                                                            <param id="0" name="Side">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="801110352994167" type="System">
+                                                                            <param id="0" name="Object">Player</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="651067306745928" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="721702690894830" type="System">
+                                                                            <param id="0" name="Object">Player</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="809014459649094">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="335509184736087" type="Player2">
+                                            <param id="0" name="Object">Player3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="312402053500517">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="353996086459680" type="System">
+                                                    <param id="0" name="First value">Team_p2</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="272992309200792">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="837785120109071" type="System">
+                                                            <param id="0" name="First value">Player2.Platform.MaxSpeed</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">850</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block disabled="1" sid="965625833144023">
+                                                            <conditions>
+                                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="940346939198711" type="p3top">
+                                                                    <param id="0" name="Object">Player2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block disabled="1" sid="270576485202474">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="551101129447394" type="Player2">
+                                                                            <param id="0" name="Side">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="615923282277716" type="System">
+                                                                            <param id="0" name="Object">Player3</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="776892362947394" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="667523074402058" type="System">
+                                                                            <param id="0" name="Object">Player3</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block disabled="1" sid="804229872232706">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="596792385956309" type="Player2">
+                                                                            <param id="0" name="Side">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="925767846630767" type="System">
+                                                                            <param id="0" name="Object">Player3</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="176113498330386" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="501482122599075" type="System">
+                                                                            <param id="0" name="Object">Player3</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="154483837144376">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="260831036035493" type="Player2">
+                                            <param id="0" name="Object">Player4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="297165212714777">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="821038491921439" type="System">
+                                                    <param id="0" name="First value">Team_p2</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="856817949466347">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="304661311097889" type="System">
+                                                            <param id="0" name="First value">Player2.Platform.MaxSpeed</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">850</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block disabled="1" sid="304797983444012">
+                                                            <conditions>
+                                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="966400621423452" type="p4top">
+                                                                    <param id="0" name="Object">Player2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block disabled="1" sid="357497645725380">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="332682283661377" type="Player2">
+                                                                            <param id="0" name="Side">0</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="940247486533020" type="System">
+                                                                            <param id="0" name="Object">Player4</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="212782665149639" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="238877588721354" type="System">
+                                                                            <param id="0" name="Object">Player4</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block disabled="1" sid="208423976600225">
+                                                                    <conditions>
+                                                                        <condition behavior="Platform" id="10" name="Is by wall" sid="290827978271247" type="Player2">
+                                                                            <param id="0" name="Side">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-14" name="Set object time scale" sid="493617843073251" type="System">
+                                                                            <param id="0" name="Object">Player4</param>
+                                                                            <param id="1" name="Time scale">0</param>
+                                                                        </action>
+                                                                        <action id="-16" name="Wait" sid="900544069747480" type="System">
+                                                                            <param id="0" name="Seconds">Stun_time</param>
+                                                                        </action>
+                                                                        <action id="-14" name="Set object time scale" sid="519637330506193" type="System">
+                                                                            <param id="0" name="Object">Player4</param>
+                                                                            <param id="1" name="Time scale">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="392186736372446">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="265472447484937" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="944549223245912" type="System">
+                    <param id="0" name="Variable">Ability_p2</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="490153088833021" type="SheildP2" />
+                <action id="-9" name="Destroy" sid="181967864695250" type="P2_Portalbot" />
+                <action id="-9" name="Destroy" sid="964219293374536" type="P2_Portaltop" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="672589623552474" title="P2-Cardboard">
+            <sub-events>
+                <event-block sid="568564395748757">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="145917949271580" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="287004494819458" type="Player2">
+                            <param id="0" name="Max Speed">250</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="441777017687866" type="Player2">
+                            <param id="0" name="Animation">&quot;Cardboard&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="225786371392615">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="966873658633077" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="750869337638741" type="Player2">
+                                    <param id="0" name="Max fall speed">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="717177070926907">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="113903285066223" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="696381147592534" type="Player2">
+                                    <param id="0" name="Max fall speed">1200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="204903435937863">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="785960344181315" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="238977787081046">
+                                    <conditions>
+                                        <condition id="-3" name="Is on-screen" sid="923997001914300" type="Player2" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="878960640582810">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="184899472869092" type="System">
+                                                    <param id="0" name="First value">Player2.Platform.VectorY</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Second value">800</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="9" name="Set vector Y" sid="978943572104682" type="Player2">
+                                                    <param id="0" name="Vector Y">-1000</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="578270733472806" type="Player2">
+                                                    <param id="0" name="Animation">&quot;Cardboardfly&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="509039720660571">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="819451831479894" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="441116316326709" type="Player2">
+                                    <param id="0" name="Max fall speed">100</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="122360140555858" type="Player2">
+                                    <param id="0" name="Animation">&quot;Cardboardfly&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="199791059021600">
+                            <conditions>
+                                <condition id="7" name="On button released" sid="578520961397439" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="859329788724368" type="Player2">
+                                    <param id="0" name="Max fall speed">1200</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="498571710127476" type="Player2">
+                                    <param id="0" name="Animation">&quot;Cardboard&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="348503307589073">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="824165880285066" type="Player2" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="524178103030038" type="Player2">
+                                    <param id="0" name="Max fall speed">1200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="944325966691886">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="449614591137013" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="664680873029774" type="Player2">
+                            <param id="0" name="Max fall speed">1200</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="555814732294816" title="P1-Portal2">
+            <sub-events>
+                <event-block sid="393248959767970">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="958273735060724" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="723947845158202" type="Player2">
+                            <param id="0" name="Max Speed">250</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="529059039465566" type="Player2">
+                            <param id="0" name="Animation">&quot;Portal&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="304707467232177">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="960837017646690" type="Player2">
+                                    <param id="0" name="Object">P2_Portaltop</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>P1 is below PT send to PB above</comment>
+                                <event-block sid="787266235119510">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="579376749073356" type="System">
+                                            <param id="0" name="First value">Player2.Y</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">P2_Portaltop.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="850011969088625" type="Player2">
+                                            <param id="0" name="Y">P2_Portalbot.Y - 20</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>P1 is above PT teleport to PB below if not overlapping ground</comment>
+                                <event-block sid="321330747247792">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="756240672507090" type="System">
+                                            <param id="0" name="First value">Player2.Y</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">P2_Portaltop.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="536904635703826">
+                                            <conditions>
+                                                <condition id="1" inverted="1" name="Is overlapping another object" sid="182286410243208" type="P2_Portalbot">
+                                                    <param id="0" name="Object">groundtile</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-2" name="Set Y" sid="202100433569794" type="Player2">
+                                                    <param id="0" name="Y">P2_Portalbot.Y + 20</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="377174540285182">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="848260652274433" type="Player2">
+                                    <param id="0" name="Object">P2_Portalbot</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>P1 is above PB sent to PT below</comment>
+                                <event-block sid="235721462160638">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="479774430256974" type="System">
+                                            <param id="0" name="First value">Player2.Y</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Second value">P2_Portalbot.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="890457186215964" type="Player2">
+                                            <param id="0" name="Y">P2_Portaltop.Y + 20</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>P1 is below PB sent to PT above</comment>
+                                <event-block sid="335117417001688">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="766624403085875" type="System">
+                                            <param id="0" name="First value">Player2.Y</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">P2_Portalbot.Y</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="318410318052002" type="Player2">
+                                            <param id="0" name="Y">P2_Portaltop.Y - 20</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="997260640280466">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="152975793864896" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="900655959047230">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="114230908859676" type="Player2">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Y co-ordinate">-300</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="620561711039576">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="257153665505145" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="226470931208393" type="Player2">
+                                                    <param id="0" name="Object">P2_Portalbot</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">5</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="623771056162695" type="Player2">
+                                                    <param id="0" name="Object">P2_Portaltop</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="806145610260674">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="142851998576300" type="Keyboard">
+                                    <param id="0" name="Key">13</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="244515335033602" type="P2_Portalbot" />
+                                <action id="-9" name="Destroy" sid="771381291329571" type="P2_Portaltop" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="955198713123332">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="251217979878614" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="482682724070994">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="829357902139148" type="Player2">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="Y co-ordinate">-300</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="579127755038629">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="324396172634874" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Spawn another object" sid="470782800520894" type="Player2">
+                                                    <param id="0" name="Object">P2_Portalbot</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">5</param>
+                                                </action>
+                                                <action id="0" name="Spawn another object" sid="881061826691637" type="Player2">
+                                                    <param id="0" name="Object">P2_Portaltop</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="404227071500813">
+                            <conditions>
+                                <condition id="7" name="On button released" sid="659545407753345" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="363750068105270" type="P2_Portalbot" />
+                                <action id="-9" name="Destroy" sid="678231538286431" type="P2_Portaltop" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="187227299158487">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="797820831221027" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="424168979983641" type="P2_Portalbot" />
+                        <action id="-9" name="Destroy" sid="383247232773844" type="P2_Portaltop" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="293169280717068" title="Locator2">
+            <sub-events>
+                <event-block sid="805041535462388">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="308025777363399" type="Player2" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="463315948102997">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="520435801554532" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="361056698642393" type="System">
+                                    <param id="0" name="Object to create">P2_Locator</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">Player2.X</param>
+                                    <param id="3" name="Y">16</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="927117987916847">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="348018994756924" type="Player2" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="177484364073219" type="P2_Locator" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="368208262898868" title="RandomAbility2">
+            <sub-events>
+                <event-block sid="375163585993369">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="394651385360637" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="832985099713092" type="Player2">
+                            <param id="0" name="Animation">&quot;Lootbox&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="132024112296218">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="744124161725052" type="ControlerXbox">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="305002071223464" type="System">
+                                    <param id="0" name="Variable">Type_p2</param>
+                                    <param id="1" name="Value">round(random(0,3))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="175816461815794">
+                            <conditions>
+                                <condition id="4" inverted="1" name="Has gamepads" sid="642760152239359" type="ControlerXbox" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="951919617792837">
+                                    <conditions>
+                                        <condition id="0" name="On key pressed" sid="744464968608638" type="Keyboard">
+                                            <param id="0" name="Key">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="678626546203581" type="System">
+                                            <param id="0" name="Variable">Type_p2</param>
+                                            <param id="1" name="Value">round(random(0,3))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="253313652662931" title="Speed P2">
+            <sub-events>
+                <event-block disabled="1" sid="533688027740942">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="522689387777269" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="241697122402313">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="418081842559399" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="179016091712719" type="Player2">
+                                    <param id="0" name="Max Speed">300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="885775493469432">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="821616881282575" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="138702088182182" type="Player2">
+                                    <param id="0" name="Max Speed">230</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="782741254662253">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="422038208461763" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="327740196508895" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="508468637821895" type="System">
+                            <param id="0" name="Variable">Type_p2</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="413384155634756">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="460385914581625" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="853169185719455" type="Player2">
+                                    <param id="0" name="Max Speed">300</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="759712579190874">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="111638094290656" type="Player2">
+                                    <param id="0" name="Instance variable">Power</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="921582062591302" type="Player2">
+                                    <param id="0" name="Max Speed">250</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

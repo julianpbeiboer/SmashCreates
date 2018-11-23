@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_Sound options </name>
+    <events>
+        <variable constant="0" name="SFXVolume" sid="535248711422989" static="0" type="number">5</variable>
+        <include>EV_SFX</include>
+        <event-group description="" disabled="1" sid="287480572614591" title="Music Slider">
+            <sub-events>
+                <event-block disabled="1" sid="669824069077384">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="153340309006485" type="MuiscVolume">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="252129391871357" type="Jump">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="dB">-100</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="749614094675482" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                            <param id="1" name="dB">-100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="239569764552791">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="858013994590043" type="MuiscVolume">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="936063533820941" type="Jump">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="dB">-30</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="544331668006659" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                            <param id="1" name="dB">-30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="470151865565174">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="192070284927620" type="MuiscVolume">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="368734296300986" type="Jump">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="dB">-20</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="314022810814237" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                            <param id="1" name="dB">-20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="315521235840052">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="188514496471666" type="MuiscVolume">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">75</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="343317796599188" type="Jump">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="dB">-10</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="562484789168949" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                            <param id="1" name="dB">-10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="109946820127079">
+                    <conditions>
+                        <condition id="1" name="Compare value" sid="935235358107481" type="MuiscVolume">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set volume" sid="799481067554502" type="Jump">
+                            <param id="0" name="Tag">&quot;Music&quot;</param>
+                            <param id="1" name="dB">0</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="404670920860275" type="Jump">
+                            <param id="0" name="Tag">&quot;Stem&quot;</param>
+                            <param id="1" name="dB">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="831943157407595">
+            <conditions>
+                <condition id="0" name="On clicked" sid="683829289937670" type="BackMain" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="776019409976390" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="468913877333112">
+            <conditions>
+                <condition id="0" name="On clicked" sid="424467078448480" type="BackLvl" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="538324652271534" type="System">
+                    <param id="0" name="Layout">Level 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="327439639195617">
+            <conditions>
+                <condition id="1" name="Compare value" sid="200076680759424" type="SFXSlideBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="396365326202260" type="Jump">
+                    <param id="0" name="Tag">&quot;SFX&quot;</param>
+                    <param id="1" name="dB">-100</param>
+                </action>
+                <action id="-9" name="Set value" sid="224787670333698" type="System">
+                    <param id="0" name="Variable">SFXVolume</param>
+                    <param id="1" name="Value">-100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="794118942780155">
+            <conditions>
+                <condition id="1" name="Compare value" sid="291913162174642" type="SFXSlideBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Value">25</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="794342225042836" type="Jump">
+                    <param id="0" name="Tag">&quot;SFX&quot;</param>
+                    <param id="1" name="dB">-30</param>
+                </action>
+                <action id="-9" name="Set value" sid="665152595577724" type="System">
+                    <param id="0" name="Variable">SFXVolume</param>
+                    <param id="1" name="Value">-30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="292518742184296">
+            <conditions>
+                <condition id="1" name="Compare value" sid="464834762340327" type="SFXSlideBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="234661141464324" type="Jump">
+                    <param id="0" name="Tag">&quot;SFX&quot;</param>
+                    <param id="1" name="dB">-20</param>
+                </action>
+                <action id="-9" name="Set value" sid="732887784509609" type="System">
+                    <param id="0" name="Variable">SFXVolume</param>
+                    <param id="1" name="Value">-20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="932817478014233">
+            <conditions>
+                <condition id="1" name="Compare value" sid="311900610672523" type="SFXSlideBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Value">75</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="852488715140260" type="Jump">
+                    <param id="0" name="Tag">&quot;SFX&quot;</param>
+                    <param id="1" name="dB">-10</param>
+                </action>
+                <action id="-9" name="Set value" sid="318767339118462" type="System">
+                    <param id="0" name="Variable">SFXVolume</param>
+                    <param id="1" name="Value">-10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="136600555217040">
+            <conditions>
+                <condition id="1" name="Compare value" sid="294684058931385" type="SFXSlideBar">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set volume" sid="410645269140276" type="Jump">
+                    <param id="0" name="Tag">&quot;SFX&quot;</param>
+                    <param id="1" name="dB">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="539631381850168" type="System">
+                    <param id="0" name="Variable">SFXVolume</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

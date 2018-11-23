@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_Pause Menu</name>
+    <events>
+        <variable constant="0" name="PauseValue" sid="386130074828230" static="0" type="number">1</variable>
+        <event-block sid="790387431432882">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="149922107891366" type="System">
+                    <param id="0" name="Variable">PauseValue</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="399002368049021" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="879139239125604" type="Pause">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="287567717186266" type="Restart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="936671303467780" type="MainMenu">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="983844575337170" type="OptionButton">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="166063161657270" type="MainMenuart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="466595148756056" type="RestartArt">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="132083049903215" type="NextMap">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="293771566321015" type="SelectionCube">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="564757392008835">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="453909675160200" type="System">
+                    <param id="0" name="Variable">PauseValue</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set time scale" sid="644131327576974" type="System">
+                    <param id="0" name="Time scale">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="769929262210285" type="Pause">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="418428747875671" type="Restart">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="769128928977808" type="MainMenu">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="479053490907260" type="OptionButton">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action disabled="1" id="2" name="Set visible" sid="388807345064051" type="NextMap">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="480904501831788" type="MainMenuart">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="142007851480890" type="RestartArt">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="728119628907589" type="SelectionCube">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Last Layout sprite visible on Lvl 4</comment>
+        <event-block disabled="1" sid="785413283501343">
+            <conditions>
+                <condition id="0" name="On clicked" sid="178185377887539" type="NextMap" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block disabled="1" sid="434803928411038">
+                    <conditions>
+                        <condition id="-16" name="Is on layer" sid="342106801860084" type="LastLayout">
+                            <param id="0" name="Layer">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="756661935889265" type="System">
+                            <param id="0" name="Layout">Level 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="285727697823036">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="349688483907352" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-43" name="Go to next/previous layout" sid="835778731094586" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="974574423821488">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="278910314811279" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="199651594510576" type="System">
+                    <param id="0" name="Variable">PauseValue</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Fall back if bugged</comment>
+        <event-block disabled="1" sid="907642606602505">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="723379678424249" type="Keyboard">
+                    <param id="0" name="Key">49</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="108999503590372" type="System" />
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="230501632105984">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="125957255721808" type="Keyboard">
+                    <param id="0" name="Key">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="993454725790512" type="System">
+                    <param id="0" name="Layout">Main Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="515928175915189">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="193210516043337" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="911458942609411" type="Keyboard">
+                    <param id="0" name="Key">38</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="975092841546162">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="808769109049570" type="SelectionCube">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">467</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="244226964281461" type="SelectionCube">
+                            <param id="0" name="Object">MainMenuart</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="161981069602440">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="895245870584839" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="316914120632323" type="Keyboard">
+                    <param id="0" name="Key">40</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="880794130416701">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="520464255330405" type="SelectionCube">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Y co-ordinate">432</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="731830107785387" type="SelectionCube">
+                            <param id="0" name="Object">RestartArt</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="534718477212416" title="Controlling menu">
+            <sub-events>
+                <event-block any="1" sid="526791779247875">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="321376532222245" type="ControlerXbox">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="335873458096854" type="ControlerXbox">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="507829305591268" type="ControlerXbox">
+                            <param id="0" name="Gamepad">2</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="662611216884305" type="ControlerXbox">
+                            <param id="0" name="Gamepad">3</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="874680643481777" type="Keyboard">
+                            <param id="0" name="Key">80</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="158495739137081">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="233234144668055" type="Pause" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="634790215497474" type="System">
+                                    <param id="0" name="Variable">PauseValue</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="331207023973546">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="940724449944548" type="Pause" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="915594877270699" type="System">
+                                    <param id="0" name="Variable">PauseValue</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Move up selection cube</comment>
+                <event-block any="1" sid="893012527682155">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="129950840947529" type="ControlerXbox">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="617221563844968" type="ControlerXbox">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="173866304466846" type="ControlerXbox">
+                            <param id="0" name="Gamepad">2</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="283478555144760" type="ControlerXbox">
+                            <param id="0" name="Gamepad">3</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">2</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="358660494615694">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="847800611900738" type="SelectionCube">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Y co-ordinate">467</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="119282482790396" type="SelectionCube">
+                                    <param id="0" name="Object">MainMenuart</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Move down selection cube</comment>
+                <event-block any="1" sid="541622263091532">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="699303433773188" type="ControlerXbox">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="209053270302739" type="ControlerXbox">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="460279156852559" type="ControlerXbox">
+                            <param id="0" name="Gamepad">2</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="939323355158926" type="ControlerXbox">
+                            <param id="0" name="Gamepad">3</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="570939120792865">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="769903962379790" type="SelectionCube">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Y co-ordinate">432</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="916844628790458" type="SelectionCube">
+                                    <param id="0" name="Object">RestartArt</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Select option</comment>
+                <event-block any="1" sid="241265972898564">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="895502383686129" type="ControlerXbox">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="103813027754552" type="ControlerXbox">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="981818537589211" type="ControlerXbox">
+                            <param id="0" name="Gamepad">2</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="6" name="On button pressed" sid="208827817804291" type="ControlerXbox">
+                            <param id="0" name="Gamepad">3</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="175369067936599" type="Keyboard">
+                            <param id="0" name="Key">32</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="757624280062367" type="Keyboard">
+                            <param id="0" name="Key">13</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="197303218171785">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="595084539566278" type="Pause" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="252167619929540">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="280360677560785" type="SelectionCube">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">467</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="466146221893029" type="System">
+                                            <param id="0" name="Variable">PauseValue</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-26" name="Restart layout" sid="514866238494284" type="System" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="871801656801872">
+                                    <conditions>
+                                        <condition id="-2" name="Compare Y" sid="772801322795336" type="SelectionCube">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Y co-ordinate">432</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="797582212164931" type="System">
+                                            <param id="0" name="Variable">PauseValue</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-2" name="Go to layout" sid="253296186194099" type="System">
+                                            <param id="0" name="Layout">Main Menu</param>
+                                        </action>
+                                        <action id="-13" name="Set time scale" sid="172902893203631" type="System">
+                                            <param id="0" name="Time scale">1.0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

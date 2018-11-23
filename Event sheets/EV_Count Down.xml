@@ -1,0 +1,2010 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EV_Count Down</name>
+    <events>
+        <include>EV_TeamBattle</include>
+        <include>EV_SFX</include>
+        <include>EV_Main Menu</include>
+        <include>EV_Pause Menu</include>
+        <include>EV_Player 1</include>
+        <include>EV_Player 2</include>
+        <include>EV_Player 3</include>
+        <include>EV_Player 4</include>
+        <variable constant="0" name="GamePadNumber" sid="364251905816184" static="0" type="number">0</variable>
+        <variable constant="0" name="Timer" sid="585339991235595" static="0" type="number">1000</variable>
+        <variable constant="0" name="Player2_Lives" sid="519977734724697" static="0" type="number">5</variable>
+        <variable constant="0" name="Player1_Lives" sid="720049952909752" static="0" type="number">5</variable>
+        <variable constant="0" name="Player3_Lives" sid="606207351476561" static="0" type="number">5</variable>
+        <variable constant="0" name="Player4_Lives" sid="165756520614939" static="0" type="number">5</variable>
+        <variable constant="0" name="ShakeReduce" sid="184570109987429" static="0" type="number">200</variable>
+        <variable constant="0" name="Team1_alive" sid="711403767467315" static="0" type="number">2</variable>
+        <variable constant="0" name="Team2_alive" sid="746518493652836" static="0" type="number">2</variable>
+        <variable constant="0" name="Team3_alive" sid="507528534279436" static="0" type="number">2</variable>
+        <variable constant="0" name="Team4_alive" sid="765884859248339" static="0" type="number">2</variable>
+        <variable constant="0" name="StartCountDown" sid="446902939398035" static="0" type="number">4</variable>
+        <event-group description="" sid="727244369183709" title="GameStart">
+            <sub-events>
+                <event-block sid="188502790282309">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="418899528817991" type="FadeIn">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="548448587385714" type="StartCountDownText">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="275972882543794">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="946680188358147" type="StartCountDownText" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="201874062750179">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="920214661088053" type="System">
+                                            <param id="0" name="Interval (seconds)">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="398936118576875">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="281158669941121" type="System">
+                                                    <param id="0" name="Variable">StartCountDown</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="483039015001769" type="Jump">
+                                                    <param id="0" name="Audio file">Start beep</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="238663027432364" type="System">
+                                                    <param id="0" name="Variable">StartCountDown</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action disabled="1" id="-11" name="Subtract from" sid="591258011570856" type="System">
+                                                    <param id="0" name="Variable">StartCountDown</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="929399195774870" type="Player">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="617234843254443" type="Player2">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="278563741102530" type="StartCountDownText">
+                                                    <param id="0" name="Text">StartCountDown</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="479624966457281">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="860541900535845" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="495244289177307" type="StartCountDownText" />
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="866286381298640" type="Player">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="771626931250409" type="Player2">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="393543320954436" type="Player3">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="11" name="Set enabled" sid="636547074014438" type="Player4">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="186598824448654" type="GOText">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="730849007246295" type="System">
+                                                    <param id="0" name="Seconds">1.0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="269235878745939" type="GOText" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="584605888815371">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="255942463754929" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Set layout effect enabled" sid="414026851481542" type="System">
+                            <param id="0" name="Mode">0</param>
+                            <param id="1" name="Effect">&quot;WarpRadial&quot;</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="966173006644162" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="151830887721973" type="Player2">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action disabled="1" id="-21" name="Reset global variables" sid="544811355678371" type="System" />
+                        <action behavior="Platform" id="11" name="Set enabled" sid="144054549743178" type="Player3">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="976447951929679" type="Player4">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="701313155112179" title="Point score">
+            <sub-events>
+                <event-block sid="577963146649118">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="814753789654457" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="610510519529582" type="P1score">
+                            <param id="0" name="Text">&quot;P1 :&quot; &amp; Player1_Lives </param>
+                        </action>
+                        <action id="0" name="Set text" sid="630268593829918" type="P2score">
+                            <param id="0" name="Text">&quot;P2 :&quot; &amp; Player2_lives</param>
+                        </action>
+                        <action id="0" name="Set text" sid="428653328792258" type="P3score">
+                            <param id="0" name="Text">&quot;P3:&quot; &amp;Player3_Lives</param>
+                        </action>
+                        <action id="0" name="Set text" sid="460078870067362" type="P4score">
+                            <param id="0" name="Text">&quot;P4:&quot; &amp;Player4_Lives</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="334264207955544" title="END GAME">
+            <sub-events>
+                <event-group description="" sid="539324525229289" title="First to 5">
+                    <sub-events>
+                        <comment>Two players</comment>
+                        <event-block sid="530871565045491">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="149314337114103" type="System">
+                                    <param id="0" name="Variable">GamePadNumber</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="895561688928588">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="921519652481410" type="System">
+                                            <param id="0" name="Variable">Player1_Lives</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="612082246017966" type="GAMEOVER">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="764376192016960" type="System">
+                                            <param id="0" name="Variable">PauseValue</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="219839670827219" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="729896012574362">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="269119651713454" type="System">
+                                            <param id="0" name="Variable">Player2_Lives</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="767147401835787" type="GAMEOVER">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="993893458823070" type="System">
+                                            <param id="0" name="Variable">PauseValue</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="838833626980327" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>More than Two players</comment>
+                        <event-block sid="152364515030208">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="340274208032665" type="System">
+                                    <param id="0" name="Variable">GamePadNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-group description="" sid="643517716415632" title="Free For All">
+                                    <sub-events>
+                                        <event-block sid="739141098399077">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="525719098599339" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="945735673861009" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="429341289741661" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p4</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="226965834030869" type="System">
+                                                    <param id="0" name="First value">Team_p3</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="553150637693210" type="System">
+                                                    <param id="0" name="First value">Team_p2</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p4</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="294097081672564" type="System">
+                                                    <param id="0" name="First value">Team_p4</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="762508897575652">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="854883821830515" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="550447968593952" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="723585685182512" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="912783283833339" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="204702674068404" type="System">
+                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>When player stock runs out subtract one from team alive</comment>
+                                                <event-block sid="534977213507391">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="857434520297830" type="System">
+                                                            <param id="0" name="Variable">Player1_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="388457740841670">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="196293164848033" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="586729966782219">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="234531214350645" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">5</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="634579533830546" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="264346858402021">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="472631611743121" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">6</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="540552624957888" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="822781348724222">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="441758012522253" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="915535014068663" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="993962835002975">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="526484609315819" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="700945669351823" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="331557072706938">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="126582430358021" type="System">
+                                                            <param id="0" name="Variable">Player2_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="722237332027299">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="877738679975597" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="843003385989252">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="552210506270789" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">5</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="395693066640628" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="387789803982663">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="277470778853677" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">6</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="319521778582786" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="843826240504299">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="862436334403380" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="413555322155236" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="489350017634020">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="504299350774462" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="460852042000162" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="374511513482130">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="488292814002652" type="System">
+                                                            <param id="0" name="Variable">Player3_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="875021904398065">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="318245474738486" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="619066406096254">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="605122679669204" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="926548961841151" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="336383531314894">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="359939316614456" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="351189489387362" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="772088580876563">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="474340706861811" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="413562626233427" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="295726295751921">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="928396443564115" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="694747177027842" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="671361217050391">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="851992546975311" type="System">
+                                                            <param id="0" name="Variable">Player4_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="668956956062907">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="346860600509858" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="173484466767051">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="260400352042320" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="395008447522764" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="780330207985370">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="701403222273719" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="463299076849250" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="966129831844911">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="421479336053472" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="546366580343414" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="694293866386726">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="498039923404855" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="870187149601046" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>P4wins</comment>
+                                                <event-block sid="170086243362106">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="164134473820237" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="698163144040795" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="103999342966097" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="724193683143430" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="768334774946541" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="341183594894003" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>P2 Wins</comment>
+                                                <event-block sid="729483316179802">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="571248302163411" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="265758901924613" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="473785323349618" type="System">
+                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="427352198336110" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="664622981847701" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="359654103808193" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>P1Wins</comment>
+                                                <event-block sid="256017167409069">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="461695441102636" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="376919455747413" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="921980567108386" type="System">
+                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="385661198918272" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="907341306479456" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="330474624637397" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>P3Wins</comment>
+                                                <event-block sid="287609714291231">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="590373011108367" type="System">
+                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="963496226626908" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="374943958129409" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="500425133352298" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="350791835194895" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="277937131129178" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-group description="" sid="848417324220997" title="Free For All 3 player">
+                                            <sub-events>
+                                                <event-block sid="278697645913335">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="636254524189960" type="System">
+                                                            <param id="0" name="First value">Team_p1</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">Team_p2</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="283188462874165" type="System">
+                                                            <param id="0" name="First value">Team_p1</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">Team_p3</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Compare two values" sid="957650467221408" type="System">
+                                                            <param id="0" name="First value">Team_p3</param>
+                                                            <param id="1" name="Comparison">1</param>
+                                                            <param id="2" name="Second value">Team_p2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="383407482573886">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="925258690099371" type="System" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-9" name="Set value" sid="236485444807231" type="System">
+                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="451375911930927" type="System">
+                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="791207997191854" type="System">
+                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment>When player stock runs out subtract one from team alive</comment>
+                                                        <event-block sid="906971225759616">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="730557921981270" type="System">
+                                                                    <param id="0" name="Variable">Player1_Lives</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="921763924364829">
+                                                                    <conditions>
+                                                                        <condition id="-4" name="Trigger once while true" sid="652053730544597" type="System" />
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="726867524599475">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="722328733666815" type="System">
+                                                                                    <param id="0" name="Variable">Team_p1</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="742190206036384" type="System">
+                                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="201757954441750">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="534483966855481" type="System">
+                                                                                    <param id="0" name="Variable">Team_p1</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="474475837384722" type="System">
+                                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="482654522334074">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="831642711544525" type="System">
+                                                                                    <param id="0" name="Variable">Team_p1</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">3</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="654155362761829" type="System">
+                                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="152337893154194">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="533577814944418" type="System">
+                                                                                    <param id="0" name="Variable">Team_p1</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="862073417994130" type="System">
+                                                                                    <param id="0" name="Variable">Team4_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="120420097076302">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="879954124845213" type="System">
+                                                                    <param id="0" name="Variable">Player2_Lives</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="526942098519203">
+                                                                    <conditions>
+                                                                        <condition id="-4" name="Trigger once while true" sid="773298426093600" type="System" />
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="477497376178118">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="741165450763168" type="System">
+                                                                                    <param id="0" name="Variable">Team_p2</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">5</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="182978027226063" type="System">
+                                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="638663138739341">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="527852526809698" type="System">
+                                                                                    <param id="0" name="Variable">Team_p2</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">6</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="398886215922457" type="System">
+                                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="413362946617237">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="680721773896375" type="System">
+                                                                                    <param id="0" name="Variable">Team_p2</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">3</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="480042954130198" type="System">
+                                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="287348887669904">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="825807041267184" type="System">
+                                                                                    <param id="0" name="Variable">Team_p2</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="622241563546733" type="System">
+                                                                                    <param id="0" name="Variable">Team4_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="275355952345405">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="792083751542669" type="System">
+                                                                    <param id="0" name="Variable">Player3_Lives</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="780859062643586">
+                                                                    <conditions>
+                                                                        <condition id="-4" name="Trigger once while true" sid="857833021718682" type="System" />
+                                                                    </conditions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="532800061985145">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="655871063141589" type="System">
+                                                                                    <param id="0" name="Variable">Team_p3</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">1</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="717950769998905" type="System">
+                                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="487229446328730">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="663715243128054" type="System">
+                                                                                    <param id="0" name="Variable">Team_p3</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">2</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="371166300987896" type="System">
+                                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="874567083086398">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="972650905004610" type="System">
+                                                                                    <param id="0" name="Variable">Team_p3</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">3</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="655054506588487" type="System">
+                                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                        <event-block sid="948686196766778">
+                                                                            <conditions>
+                                                                                <condition id="-14" name="Compare variable" sid="935149068854796" type="System">
+                                                                                    <param id="0" name="Variable">Team_p3</param>
+                                                                                    <param id="1" name="Comparison">0</param>
+                                                                                    <param id="2" name="Value">4</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="-11" name="Subtract from" sid="338636156181300" type="System">
+                                                                                    <param id="0" name="Variable">Team4_alive</param>
+                                                                                    <param id="1" name="Value">1</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <comment>P2 Wins</comment>
+                                                        <event-block sid="262463955425569">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="913538980006206" type="System">
+                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-14" name="Compare variable" sid="625029481184141" type="System">
+                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-15" name="Set visible" sid="465656907199196" type="GAMEOVER">
+                                                                    <param id="0" name="Visibility">1</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="293777991933384" type="System">
+                                                                    <param id="0" name="Variable">PauseValue</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="815321916046751" type="System">
+                                                                    <param id="0" name="Seconds">5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment>P1Wins</comment>
+                                                        <event-block sid="789766328718143">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="394755139720503" type="System">
+                                                                    <param id="0" name="Variable">Team3_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-14" name="Compare variable" sid="643013036960531" type="System">
+                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-15" name="Set visible" sid="334364107234860" type="GAMEOVER">
+                                                                    <param id="0" name="Visibility">1</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="433454454140896" type="System">
+                                                                    <param id="0" name="Variable">PauseValue</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="756848252227652" type="System">
+                                                                    <param id="0" name="Seconds">5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <comment>P3Wins</comment>
+                                                        <event-block sid="933834997591683">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="176431331210963" type="System">
+                                                                    <param id="0" name="Variable">Team1_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-14" name="Compare variable" sid="368308739869905" type="System">
+                                                                    <param id="0" name="Variable">Team2_alive</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-15" name="Set visible" sid="626145621480664" type="GAMEOVER">
+                                                                    <param id="0" name="Visibility">1</param>
+                                                                </action>
+                                                                <action id="-9" name="Set value" sid="590418031486715" type="System">
+                                                                    <param id="0" name="Variable">PauseValue</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="878261725409308" type="System">
+                                                                    <param id="0" name="Seconds">5</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-group>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="" sid="617095698401795" title="Team 2v2">
+                                    <sub-events>
+                                        <event-block any="1" sid="830345470691340">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="424771932337172" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="536558084340082" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="888443490376626" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">Team_p4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="570729637921641">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="915555300722461" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="975189543668105" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="513369436033877" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Value">2</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="585931522998409">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="835249086338120" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="365631844278503" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="324730298635134" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="182699880013871" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="686565412514300">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="689190959707351" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="899251546155997" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="243199356707194" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="495028542808909" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="349066822485892">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="496709156296166" type="System">
+                                                            <param id="0" name="Variable">Player1_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="992955787725691">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="240854390795207" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="681952772545516">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="336422642317634" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="183150046503453" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="276654837046219">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="356234367269752" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="266255812597218" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="961334037041138">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="330682639286047" type="System">
+                                                            <param id="0" name="Variable">Player2_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="547214122567963">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="433403882604124" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="109824310358040">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="367790377569703" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="331707122036668" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="988601458618135">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="140046266795200" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="661576715986626" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="644000401225941">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="591047720411008" type="System">
+                                                            <param id="0" name="Variable">Player3_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="631530662527989">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="728506837466310" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="639897635071310">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="201607804815643" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="389670013904394" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="114341794503202">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="893468471358737" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="689588480462816" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="193800544560071">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="724456081774801" type="System">
+                                                            <param id="0" name="Variable">Player4_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="735278608874502">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="770470280191448" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="795466103317429">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="125530744460229" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="753012782508721" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="311599118043151">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="536167055580327" type="System">
+                                                                            <param id="0" name="Variable">Team_p4</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="270759089287599" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="162737737096973">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="997814917889710" type="System">
+                                    <param id="0" name="Variable">GamePadNumber</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-group description="" sid="292879599753619" title="Free For All 3ppl">
+                                    <sub-events>
+                                        <event-block sid="176494921992803">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="702085804269015" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="305275295755669" type="System">
+                                                    <param id="0" name="First value">Team_p1</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p3</param>
+                                                </condition>
+                                                <condition id="-8" name="Compare two values" sid="379718234932013" type="System">
+                                                    <param id="0" name="First value">Team_p3</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">Team_p2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="994558558239471">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="707436962960127" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="410567777401096" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="481130809619532" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="493406501893931" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>When player stock runs out subtract one from team alive</comment>
+                                                <event-block sid="708933991546529">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="718747794325963" type="System">
+                                                            <param id="0" name="Variable">Player1_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="663354525895461">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="839775982785803" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="643127134143843">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="725072211580129" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">5</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="319817106644294" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="438588472040270">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="650391964196294" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">6</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="158519098779964" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="892790259627428">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="512485680093464" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="170735813709874" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="470655176322689">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="597273293854890" type="System">
+                                                                            <param id="0" name="Variable">Team_p1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="966139709381006" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="955791181780105">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="991209677012903" type="System">
+                                                            <param id="0" name="Variable">Player2_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="679867845973087">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="859129144529059" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="108633845836847">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="644277561491158" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">5</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="362019725807726" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="673262589534058">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="373987346040478" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">6</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="749957518573498" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="677952988265580">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="430881447139479" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="145714548363650" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="184715541928215">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="418745365365145" type="System">
+                                                                            <param id="0" name="Variable">Team_p2</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="416527589305599" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="645528754531774">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="770405842985355" type="System">
+                                                            <param id="0" name="Variable">Player3_Lives</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="884393675960951">
+                                                            <conditions>
+                                                                <condition id="-4" name="Trigger once while true" sid="771534556253987" type="System" />
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="386277651642118">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="405451819367720" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="241280134482753" type="System">
+                                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="765479459956352">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="287983309218741" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">2</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="875750209775991" type="System">
+                                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="884089642054511">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="782676517040832" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">3</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="151510033832447" type="System">
+                                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                                <event-block sid="807781841023069">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="570441027829505" type="System">
+                                                                            <param id="0" name="Variable">Team_p3</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">4</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-11" name="Subtract from" sid="444061040357994" type="System">
+                                                                            <param id="0" name="Variable">Team4_alive</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>P2 Wins</comment>
+                                                <event-block sid="508623165178585">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="508008595609517" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="646957251926763" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="519249775644437" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="440345660920985" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="996062888992283" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>P1Wins</comment>
+                                                <event-block sid="805631935917742">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="456306156569746" type="System">
+                                                            <param id="0" name="Variable">Team3_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="904750563309491" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="936761063882315" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="102233939111620" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="121033022119983" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <comment>P3Wins</comment>
+                                                <event-block sid="452152405709825">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="776667252386989" type="System">
+                                                            <param id="0" name="Variable">Team1_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="624989833941377" type="System">
+                                                            <param id="0" name="Variable">Team2_alive</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="951693529751605" type="GAMEOVER">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-9" name="Set value" sid="641251317604799" type="System">
+                                                            <param id="0" name="Variable">PauseValue</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="124541861054234" type="System">
+                                                            <param id="0" name="Seconds">5</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" disabled="1" sid="276652276429540" title="TimerMode">
+                    <sub-events>
+                        <event-block disabled="1" sid="849593857237066">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="811950807001544" type="System">
+                                    <param id="0" name="Variable">Player1_Lives</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">Player2_lives</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="621927372354994" type="Wins">
+                                    <param id="0" name="Text">&quot;Player 1 Wins!&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="882224978108587" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="814487870862694" type="Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="909817698074274">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="893733173987999" type="System">
+                                    <param id="0" name="Variable">Player2_Lives</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">Player1_Lives</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="514726053462033" type="Wins">
+                                    <param id="0" name="Text">&quot;Player 2 Wins!&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="795948980123949" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="376841313274377" type="Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="828663800414769">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="958847639943383" type="System">
+                                    <param id="0" name="Variable">Player1_Lives</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player2_lives</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="288518311228898" type="Wins">
+                                    <param id="0" name="Text">&quot;Draw&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="795028372420511" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="237843968673493" type="Wins">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="964795000732897">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="218290957633310" type="System">
+                                    <param id="0" name="Variable">Timer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="731225760903072" type="Jump">
+                                    <param id="0" name="Tag">&quot;Beep&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="137262244915060">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="898881097772773" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="963582822278932" type="Jump">
+                                            <param id="0" name="Audio file">go</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Go&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="571324686773289">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="686690426414295" type="System" />
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="0" name="Set text" sid="987458277064751" type="Timer">
+                                    <param id="0" name="Text">Timer</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="269056579265638">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="945841178255892" type="System">
+                                    <param id="0" name="Variable">Timer</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">16</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="434784815758463">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="217974498378218" type="System">
+                                            <param id="0" name="Interval (seconds)">1.0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="205970232976829" type="Jump">
+                                            <param id="0" name="Audio file">Start beep</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Beep&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Timer -&gt; game over</comment>
+                        <event-block disabled="1" sid="992725982685036">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="693779199853888" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="570261810046453" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block disabled="1" sid="108486900091094">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="791155504963628" type="System">
+                                            <param id="0" name="Variable">Timer</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="723939481082899" type="System">
+                                            <param id="0" name="Variable">Timer</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="768986106592102">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="909211601461230" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="332699616084621" type="GAMEOVER">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="350063978376091" type="System">
+                                            <param id="0" name="Seconds">5</param>
+                                        </action>
+                                        <action id="-26" name="Restart layout" sid="254696906294226" type="System" />
+                                        <action disabled="1" id="-21" name="Reset global variables" sid="894591738696903" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="148768003568774">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="564700190573717" type="GAMEOVER" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="907034151390058" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="649885409797727" type="Player2">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="597543795817244" title="Level rotation" />
+        <event-block sid="631494087651768">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="193839256639945" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="346680736275952" type="System">
+                    <param id="0" name="Variable">Player1_Lives</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="529619839718627" type="System">
+                    <param id="0" name="Variable">Player2_Lives</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="688648145699049" type="System">
+                    <param id="0" name="Variable">StartCountDown</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-9" name="Set value" sid="304156723164752" type="System">
+                    <param id="0" name="Variable">Player3_Lives</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="225419747429343" type="System">
+                    <param id="0" name="Variable">Player4_Lives</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action id="-9" name="Set value" sid="758010947573427" type="System">
+                    <param id="0" name="Variable">PauseValue</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

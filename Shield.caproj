@@ -1,0 +1,1567 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Shield</name>
+    <description></description>
+    <version>1.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>3phjf8c2bcezm</unique-id>
+    <saved-with-version>25900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+        <plugin author="Scirra" id="sliderbar" version="1">Slider bar</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="warpradial">Warp Radial</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>640</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Opener</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Sprites">
+            <object-folder name="Player1">
+                <object-type name="Player" sid="900494388633623">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Team" sid="223877834394310" type="number" />
+                        <instance-variable name="WallJump" sid="433662106810855" type="number" />
+                        <instance-variable name="Power" sid="169170785745569" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="779806163734224">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="843640320250660">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="8Direction" sid="862797483512347">
+                            <behavior id="EightDir" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="745570946640843" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\boxSprite_Aqua.png">
+                                <image-point name="sheild up" x="0.46875" y="-0.46875" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.46875" y="-5.875" />
+                                <image-point name="Portal_bot" x="0.5" y="1.03125" />
+                                <image-point name="Arrow" x="0.5" y="-0.9375" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Milkcrate" pingpong="0" repeatcount="1" repeatto="0" sid="795562547753542" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Milkcrate_4.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="companionCube" pingpong="0" repeatcount="1" repeatto="0" sid="295086661137700" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\portal.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboard" pingpong="0" repeatcount="1" repeatto="0" sid="218117730234398" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_1.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Lootbox" pingpong="0" repeatcount="1" repeatto="0" sid="970411662031700" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\lootbox_2.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="BMO" pingpong="0" repeatcount="1" repeatto="0" sid="135969630651375" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\BMO.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboardfly" pingpong="0" repeatcount="1" repeatto="0" sid="124552798075689" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_Floating (1).png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.617647" />
+                                    <point x="0.764706" y="1" />
+                                    <point x="0.294118" y="1" />
+                                    <point x="0" y="0.617647" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="1" name="Cardboardmoving" pingpong="0" repeatcount="1" repeatto="0" sid="643939465357326" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Esky" pingpong="0" repeatcount="1" repeatto="0" sid="828502071495257" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\esky_coloured_2.png">
+                                <image-point name="sheild up" x="0.470588" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.470588" y="-5.88235" />
+                                <image-point name="Portal_bot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0.0882353" y="0.0882353" />
+                                    <point x="0.5" y="0.0882353" />
+                                    <point x="0.882353" y="0.117647" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.970588" y="0.970588" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.0294118" y="0.970588" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="1" name="Minecraft" pingpong="0" repeatcount="1" repeatto="0" sid="891284480682633" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Minecraft.png">
+                                <image-point name="sheild up" x="0.46875" y="-0.46875" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portal_top" x="0.46875" y="-5.875" />
+                                <image-point name="Portal_bot" x="0.5" y="1.03125" />
+                                <image-point name="Arrow" x="0.5" y="-0.9375" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="p1top" sid="887280233576975">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="958559570645573" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.2">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="SheildP1" sid="586180333167812">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="223800915216011">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="888595004680788">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="665511577481488" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\milkShield (1).png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Milk" pingpong="0" repeatcount="1" repeatto="0" sid="653375481737397" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\milkShield (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1_Portalbot" sid="292945512807054">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="578961748576648" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.2" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\PortalBot.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1_Portaltop" sid="206545905221711">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471648815456924" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.8" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Portaltop.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1_Locator" sid="805911734542868">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="864209233746575" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Arrow" sid="474405698528963">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="877604155808604" speed="5">
+                            <frame duration="1" hotspotX="0.545455" hotspotY="0.545455" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\blue_indicator.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Teamindicator1" sid="920577462034274">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="921847398398070" speed="5">
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.428571" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Player2">
+                <object-type name="p2top" sid="313612530109616">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="229792542691664" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.2">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Player2" sid="685091871601640">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Team" sid="880145609693960" type="number" />
+                        <instance-variable name="WallJump" sid="787372570100704" type="number" />
+                        <instance-variable name="Power" sid="803399972583571" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="899152949814747">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="938595391932829">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="204757878872939" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\boxSprite_Magma.png">
+                                <image-point name="sheild up" x="0.5" y="-0.46875" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-4.6875" />
+                                <image-point name="portalBot" x="0.5" y="1.03125" />
+                                <image-point name="Arrow" x="0.5" y="-0.9375" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Esky" pingpong="0" repeatcount="1" repeatto="0" sid="727483094002160" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Milkcrate_4.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-4.67647" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0.0882353" y="0.0882353" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.941176" y="0.0588235" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboard" pingpong="0" repeatcount="1" repeatto="0" sid="282569433599795" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_1.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.470588" y="-5.29412" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Portal" pingpong="0" repeatcount="1" repeatto="0" sid="407505744380042" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\portal.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-5.29412" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Lootbox" pingpong="0" repeatcount="1" repeatto="0" sid="789746385321735" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\lootbox_2.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-4.67647" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="BMO" pingpong="0" repeatcount="1" repeatto="0" sid="935498470733117" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\BMO.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-4.67647" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboardfly" pingpong="0" repeatcount="1" repeatto="0" sid="153715694533142" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_Floating (1).png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="Portaltop" x="0.5" y="-4.67647" />
+                                <image-point name="portalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.617647" />
+                                    <point x="0.764706" y="1" />
+                                    <point x="0.294118" y="1" />
+                                    <point x="0" y="0.617647" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="SheildP2" sid="559953970223329">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="628814146726549">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="404929425036003">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="540027161900705" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\beerShield (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P2_Portalbot" sid="117283253274045">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="726273943458698" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.2" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\PortalBot.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P2_Portaltop" sid="417558649631485">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="287182118244193" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.8" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Portaltop.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P2_Locator" sid="968909081717704">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="298544758557162" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Arrow2" sid="763094388620323">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="307499516646401" speed="5">
+                            <frame duration="1" hotspotX="0.545455" hotspotY="0.545455" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\red_indicator.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Teamindicator2" sid="746995103619632">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="515563507166567" speed="5">
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.428571" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Player3">
+                <object-type name="p3top" sid="352289985375710">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="421898711002958" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.2" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Player3" sid="170365850341057">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Team" sid="929289724297959" type="number" />
+                        <instance-variable name="WallJump" sid="837064543238587" type="number" />
+                        <instance-variable name="Power" sid="163267008931429" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="967770253539837">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="672390062807268">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="353870037330790" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\boxSprite_Aqua.png">
+                                <image-point name="sheild up" x="0.5" y="-0.46875" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.6875" />
+                                <image-point name="PortalBot" x="0.5" y="1.03125" />
+                                <image-point name="Arrow" x="0.5" y="-0.9375" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Esky" pingpong="0" repeatcount="1" repeatto="0" sid="642947651189658" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Milkcrate_4.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0.0882353" y="0.0882353" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.941176" y="0.0588235" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Portal" pingpong="0" repeatcount="1" repeatto="0" sid="214545870076667" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\portal.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-5.29412" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboard" pingpong="0" repeatcount="1" repeatto="0" sid="625295282541609" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_1.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Lootbox" pingpong="0" repeatcount="1" repeatto="0" sid="617014765932025" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\lootbox_2.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="BMO" pingpong="0" repeatcount="1" repeatto="0" sid="635628012891865" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\BMO.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboardfly" pingpong="0" repeatcount="1" repeatto="0" sid="141447180725705" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_Floating (1).png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="PortalBot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.617647" />
+                                    <point x="0.764706" y="1" />
+                                    <point x="0.294118" y="1" />
+                                    <point x="0" y="0.617647" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="SheildP3" sid="480658613390513">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="622160357633420">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="922418364970859">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160408935179649" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\beerShield (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P3_Portalbot" sid="924434924690037">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="659764967231634" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.2" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\PortalBot.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P3_Portaltop" sid="228856330919150">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="886062572153681" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.8" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Portaltop.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P3_Locator" sid="799205356403817">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="264306000351387" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Arrow3" sid="686994431544512">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="608554955522455" speed="5">
+                            <frame duration="1" hotspotX="0.545455" hotspotY="0.545455" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\green_indicator.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Teamindicator3" sid="535578605244014">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="516611880917293" speed="5">
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.428571" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Player4">
+                <object-type name="p4top" sid="515285832156026">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="707107090681439" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.2">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="0.996" y="0.996" />
+                                    <point x="0" y="0.992" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Player4" sid="323400989418094">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Team" sid="696696623971686" type="number" />
+                        <instance-variable name="WallJump" sid="752410705776995" type="number" />
+                        <instance-variable name="Power" sid="126018654329361" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="121375385531821">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="355035200191378">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160095982307224" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\boxSprite_Magma.png">
+                                <image-point name="sheild up" x="0.5" y="-0.46875" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.6875" />
+                                <image-point name="Portalbot" x="0.5" y="1.03125" />
+                                <image-point name="Arrow" x="0.5" y="-0.9375" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="MilkCrate" pingpong="0" repeatcount="1" repeatto="0" sid="113159919325057" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Milkcrate_4.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Portal" pingpong="0" repeatcount="1" repeatto="0" sid="551255002371090" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\portal.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-5.29412" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboard" pingpong="0" repeatcount="1" repeatto="0" sid="997788834291497" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_1.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Lootbox" pingpong="0" repeatcount="1" repeatto="0" sid="636713962699502" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\lootbox_2.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="BMO" pingpong="0" repeatcount="1" repeatto="0" sid="565804437741917" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\BMO.png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cardboardfly" pingpong="0" repeatcount="1" repeatto="0" sid="308380235528788" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\cardboardBox_Floating (1).png">
+                                <image-point name="sheild up" x="0.5" y="-0.470588" />
+                                <image-point name="destroy" x="0.5" y="0" />
+                                <image-point name="destroyBot" x="0.5" y="1" />
+                                <image-point name="PortalTop" x="0.5" y="-4.67647" />
+                                <image-point name="Portalbot" x="0.5" y="1.02941" />
+                                <image-point name="Arrow" x="0.5" y="-0.941176" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.617647" />
+                                    <point x="0.764706" y="1" />
+                                    <point x="0.294118" y="1" />
+                                    <point x="0" y="0.617647" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="SheildP4" sid="375959233794551">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="424965426519951">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="535898657157266">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="402112305497836" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\milkShield (1).png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P4_Portaltop" sid="112055086381089">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="742714498777287" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.8" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Portaltop.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P4_Portalbot" sid="758508108500497">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795456528847257" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.2" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\PortalBot.png">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.992" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P4_Locator" sid="894947274272487">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="110670903490982" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Arrow4" sid="583698673397155">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="657855155882254" speed="5">
+                            <frame duration="1" hotspotX="0.545455" hotspotY="0.545455" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\purple_indicator.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Teamindicator4" sid="211671862181442">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="734828413327535" speed="5">
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.428571" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Environment">
+                <object-type name="GroundArt" sid="159263571571989">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="852248141669317" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\groundSprite_1.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="BackgroundMainMenu" sid="694645258531021">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="651734993611897" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\mainMenu_BG_1.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Earth_background" sid="658295099303721">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="496043120571702" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\inGame_BG_1.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Pillar_R" sid="808893237943538">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="582034994163288">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="455161398835666" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\pillarRightSprite_1.png">
+                                <image-point name="Imagepoint 1" x="0.203125" y="0.65625" />
+                                <image-point name="Imagepoint 2" x="0.40625" y="0.65625" />
+                                <image-point name="Imagepoint 3" x="0.609375" y="0.65625" />
+                                <image-point name="Imagepoint 4" x="0.8125" y="0.65625" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Piller_L" sid="195411403371059">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="383474637643235">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="324892703980340" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\pillarLeftSprite_1.png">
+                                <image-point name="Imagepoint 1" x="0.203125" y="0.65625" />
+                                <image-point name="Imagepoint 2" x="0.40625" y="0.65625" />
+                                <image-point name="Imagepoint 3" x="0.609375" y="0.65625" />
+                                <image-point name="Imagepoint 4" x="0.8125" y="0.65625" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="PlayerSwitch" sid="911366771835376">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="162765671200958">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="979454643828631">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="903555404913896" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\shield_Aqua.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="wallTile" sid="114554736982932">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="569785291055407">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture original-source="H:\Documents\Shield images\Art Assets\wallSprite_Left.png" />
+                </object-type>
+                <object-type name="groundtile" sid="740711854101211">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="299313504838853">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture original-source="H:\Documents\Shield images\Art Assets\inGame_Ground.png" />
+                </object-type>
+                <object-type name="Platform1" sid="692260808229613">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Jumpthru" sid="789076539167998">
+                            <behavior id="jumpthru" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture original-source="H:\Documents\Shield images\Art Assets\platform_Magma.png" />
+                </object-type>
+                <object-type name="PlayerSwitch2" sid="212987291031146">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="403017594348650">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="466845922326626">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="312611119034690" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\shield_Aqua.png" />
+                        </animation>
+                        <animation framecount="7" loop="0" name="pressed" pingpong="0" repeatcount="1" repeatto="0" sid="795069515564418" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\Sheild\Shield images\Art Assets\shield_Aqua.png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Bridge" sid="934637360888725">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="552414904683742" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\bridge_2.png">
+                                <collision-poly>
+                                    <point x="0.239063" y="0.55036" />
+                                    <point x="0.5" y="0.701439" />
+                                    <point x="0.76875" y="0.532374" />
+                                    <point x="0.76875" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="0.856115" />
+                                    <point x="0" y="1" />
+                                    <point x="0.240625" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Level1Background" sid="544810703025925">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="449034105383975" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\background_6.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1_Locator2" sid="224861459800463">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="512825225816233" speed="4">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Misc">
+                <object-type name="BackgroundTile" sid="278686237833932">
+                    <plugin id="TiledBg" />
+                    <texture />
+                </object-type>
+                <object-type name="SoundTrackStart" sid="347381722962790">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="978232049759727">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="FadeIn" sid="835352597032931">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="428233543542482" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite" sid="682913005523127">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="260585579422152" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="H:\Documents\Shield images\Art Assets\controls.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Taunts">
+                <object-type name="AwLOL_Taunt" sid="658400357151171">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="863221417349278">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="320571423587857" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="H:\Documents\Shield images\Art Assets\tauntSprite_AwLol.png">
+                                <collision-poly>
+                                    <point x="0.1875" y="0.1875" />
+                                    <point x="0.5" y="0.15625" />
+                                    <point x="0.90625" y="0.09375" />
+                                    <point x="0.84375" y="0.5" />
+                                    <point x="0.90625" y="0.90625" />
+                                    <point x="0.5" y="0.46875" />
+                                    <point x="0.34375" y="0.65625" />
+                                    <point x="0.09375" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Squib_Taunt" sid="385691963259143">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="768789476432121">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="917465576895513" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="H:\Documents\Shield images\Art Assets\tauntSprite_Squidward.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.21875" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.8125" y="0.1875" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+        </object-folder>
+        <object-folder name="TextBoxes">
+            <object-type name="Lv1TextBox" sid="747209970800143">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="Lv2TextBox" sid="658793353762341">
+                <plugin id="TextBox" />
+            </object-type>
+            <object-type name="Lv3TextBox" sid="382844218272337">
+                <plugin id="TextBox" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Text">
+            <object-type name="P1score" sid="959331483620435">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="P2score" sid="543903216156912">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Timer" sid="346027096557463">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="GAMEOVER" sid="436257477139929">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Shield" sid="692789493593749">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="StartCountDownText" sid="316809840998181">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Wins" sid="882928828778902">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="GOText" sid="214751993898615">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Dash" sid="583791918112655">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="buttonNames" sid="984623139151766">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="testMap" sid="830227188945171">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="P3score" sid="513584402823242">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="P4score" sid="906660648979307">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="TeamsNotEven" sid="761749341523606">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Buttons">
+            <object-type name="MainMenu" sid="380331297568564">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="Restart" sid="252120970051556">
+                <plugin id="Button" />
+                <container>
+                    <type>Restart</type>
+                    <type>RestartArt</type>
+                </container>
+            </object-type>
+            <object-type name="MainMenuart" sid="562969310503555">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="866573281103648" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\mainMenu_Text.png">
+                            <collision-poly>
+                                <point x="0.075" y="0.25" />
+                                <point x="0.5" y="0.25" />
+                                <point x="0.9" y="0.333333" />
+                                <point x="0.9875" y="0.5" />
+                                <point x="0.875" y="0.583333" />
+                                <point x="0.5" y="0.416667" />
+                                <point x="0.1" y="0.666667" />
+                                <point x="0.0375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="RestartArt" sid="595878653419229">
+                <plugin id="Sprite" />
+                <container>
+                    <type>Restart</type>
+                    <type>RestartArt</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="647688219682212" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Shield images\Art Assets\restart_Text.png">
+                            <collision-poly>
+                                <point x="0.1125" y="0.375" />
+                                <point x="0.5" y="0.25" />
+                                <point x="0.8375" y="0.541667" />
+                                <point x="0.8375" y="0.458333" />
+                                <point x="0.5" y="0.708333" />
+                                <point x="0.1" y="0.666667" />
+                                <point x="0.1" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Pause" sid="510570470600429">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="383584333658236" speed="5">
+                        <frame duration="1" hotspotX="0.5125" hotspotY="0.5625" original-source="H:\Documents\Shield images\Art Assets\pause_Sprite (1).png">
+                            <collision-poly>
+                                <point x="0.147059" y="0.147059" />
+                                <point x="0.5" y="0" />
+                                <point x="0.852941" y="0.147059" />
+                                <point x="1" y="0.5" />
+                                <point x="0.852941" y="0.852941" />
+                                <point x="0.5" y="1" />
+                                <point x="0.147059" y="0.852941" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="NextMap" sid="681868372053308">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Audio">
+            <object-type name="Jump" sid="696999366644043">
+                <plugin id="Audio" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Sound Options">
+            <object-type name="Options" sid="954571260767402">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="MuiscVolume" sid="660040399156959">
+                <plugin id="sliderbar" />
+            </object-type>
+            <object-type name="OptionButton" sid="597521104803307">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="BackMain" sid="281219184803646">
+                <plugin id="Button" />
+            </object-type>
+            <object-type name="SFXSlideBar" sid="862298677662548">
+                <plugin id="sliderbar" />
+            </object-type>
+            <object-type name="BackLvl" sid="206490405438981">
+                <plugin id="Button" />
+            </object-type>
+        </object-folder>
+        <object-type name="Keyboard" sid="825843143484729">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="ControlerXbox" sid="278771366717116">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="RisingGround" sid="384945236856882">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="700323079193632">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="710032074389680">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="489617229451403" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ReverseDirection" sid="768899887528608">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102571701173340" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Spring" sid="797397659408434">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="724991992855442">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="535982117757366" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LastLayout" sid="515071923559649">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="630909801330628" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="GeneralArrayInstance" sid="159346523107644">
+            <plugin id="Arr" />
+            <instance-variables>
+                <instance-variable name="Team1" sid="531722215609481" type="number" />
+                <instance-variable name="Team2" sid="915720172846013" type="number" />
+                <instance-variable name="P1" sid="128170084578887" type="number" />
+                <instance-variable name="P2" sid="275490614347984" type="number" />
+                <instance-variable name="P3" sid="834857806706951" type="number" />
+                <instance-variable name="P4" sid="174674974256796" type="number" />
+                <instance-variable name="Event" sid="733033191077219" type="number" />
+                <instance-variable name="Power" sid="570449120642059" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="PLayerCard" sid="475925546537980">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="364914157176035" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.518519" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\playerCard.png">
+                        <collision-poly>
+                            <point x="0.0131579" y="0.037037" />
+                            <point x="0.5" y="0" />
+                            <point x="0.986842" y="0.037037" />
+                            <point x="1" y="0.481481" />
+                            <point x="0.986842" y="0.962963" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0131579" y="0.962963" />
+                            <point x="0" y="0.481481" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RandomItemCrate" sid="706326267390448">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="EventOrPower" sid="704115501332912" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="915397104135515">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="464560459076986">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="579055801979528" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\itemBox_1.png">
+                        <image-point name="Imagepoint 1" x="0.5" y="0" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MeteorShower" sid="910208925512867">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="367544909066172">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="453278952648472" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RandomCreateTop" sid="476510297561657">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="107176076868893" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.2">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SelectionCube" sid="151182643485679">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="258031169925172" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="P1_Rocket" sid="519651216692888">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="872241336112971">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="500877432874213">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="671202813441729" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\beerShield.png">
+                        <collision-poly>
+                            <point x="0.125" y="0.25" />
+                            <point x="0.5" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.5" y="1" />
+                            <point x="0.125" y="0.75" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="P1_Array" sid="443884849631356">
+            <plugin id="Arr" />
+            <instance-variables>
+                <instance-variable name="Rocket_hold" sid="583543246943007" type="number" />
+                <instance-variable name="Rocket_powerup" sid="934481950101489" type="number" />
+                <instance-variable name="MinecraftBlocks" sid="120041191764256" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="MinecraftBlock" sid="963664168437051">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="960351111551017">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="915359651502925" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" original-source="H:\Documents\Projects\SuperSmashCrates\Textures\Minecraft.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="MinecraftBlock2" sid="371871089341168">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="303503618469623">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="802913445476536">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="678890089599087" speed="5">
+                    <frame duration="1" hotspotX="1" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Opener.xml</layout>
+        <layout>Controls.xml</layout>
+        <layout>Main Menu.xml</layout>
+        <layout>Level 1.xml</layout>
+        <layout>Level 2.xml</layout>
+        <layout>Level 3.xml</layout>
+        <layout>Level 4.xml</layout>
+        <layout>4v4.xml</layout>
+        <layout>Sound Options.xml</layout>
+        <layout>Test Map.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>EV_Count Down.xml</event-sheet>
+        <event-sheet>EV_Player 1.xml</event-sheet>
+        <event-sheet>EV_Player 2.xml</event-sheet>
+        <event-sheet>EV_Pause Menu.xml</event-sheet>
+        <event-sheet>EV_Main Menu.xml</event-sheet>
+        <event-sheet>EV_SFX.xml</event-sheet>
+        <event-sheet>EV_Sound options .xml</event-sheet>
+        <event-sheet>EV_Platforms_hazards.xml</event-sheet>
+        <event-sheet>EV_Player 3.xml</event-sheet>
+        <event-sheet>EV_Player 4.xml</event-sheet>
+        <event-sheet>EV_TeamBattle.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="20" />
+        <global-instance type="ControlerXbox" uid="17">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Jump" uid="85">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="Jump.m4a" />
+        <file name="Jump.ogg" />
+        <file name="death.m4a" />
+        <file name="death.ogg" />
+        <file name="landing.m4a" />
+        <file name="landing.ogg" />
+        <file name="slam.m4a" />
+        <file name="slam.ogg" />
+        <file name="go.m4a" />
+        <file name="go.ogg" />
+        <file name="Start beep.m4a" />
+        <file name="Start beep.ogg" />
+        <file name="overlaping.m4a" />
+        <file name="overlaping.ogg" />
+        <file name="JumpV2.m4a" />
+        <file name="JumpV2.ogg" />
+        <file name="dash.m4a" />
+        <file name="dash.ogg" />
+    </sounds-folder>
+    <music-folder>
+        <file name="Aegis Loop.m4a" />
+        <file name="Aegis Loop.ogg" />
+        <file name="Aegis Stem.m4a" />
+        <file name="Aegis Stem.ogg" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
